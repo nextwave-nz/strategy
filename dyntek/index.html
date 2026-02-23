@@ -1,1 +1,754 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dyntek Corp — Navigation & Landing Page Strategy</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,500;0,9..40,700;1,9..40,400&family=Playfair+Display:wght@600;800&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #F5F7FA;
+    --surface: #FFFFFF;
+    --surface-2: #EEF1F6;
+    --border: #DDE2EA;
+    --accent: #0098CC;
+    --accent-glow: rgba(0,152,204,.1);
+    --accent-warm: #E85A2A;
+    --green: #16874A;
+    --red: #D93535;
+    --text: #1A2233;
+    --text-dim: #4A5568;
+    --text-muted: #8895A7;
+    --font-display: 'Playfair Display', Georgia, serif;
+    --font-body: 'DM Sans', system-ui, sans-serif;
+  }
 
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: var(--font-body);
+    line-height: 1.6;
+    min-height: 100vh;
+    overflow-x: hidden;
+  }
+
+  /* === HEADER === */
+  .header {
+    padding: 32px 48px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid var(--border);
+    position: sticky;
+    top: 0;
+    background: rgba(245,247,250,.94);
+    backdrop-filter: blur(20px);
+    z-index: 100;
+  }
+  .header-brand {
+    font-family: var(--font-display);
+    font-size: 1.1rem;
+    color: var(--accent);
+    letter-spacing: .5px;
+  }
+  .header-brand span { color: var(--text-dim); font-weight: 300; }
+  .header-meta { font-size: .78rem; color: var(--text-muted); letter-spacing: 1px; text-transform: uppercase; }
+
+  /* === HERO === */
+  .hero {
+    padding: 80px 48px 60px;
+    max-width: 900px;
+    position: relative;
+  }
+  .hero::before {
+    content: '';
+    position: absolute;
+    top: -40px; left: -100px;
+    width: 500px; height: 500px;
+    background: radial-gradient(circle, rgba(0,152,204,.07) 0%, transparent 70%);
+    pointer-events: none;
+  }
+  .hero-label {
+    font-size: .72rem;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+  .hero-label::before {
+    content: '';
+    width: 32px; height: 1px;
+    background: var(--accent);
+  }
+  .hero h1 {
+    font-family: var(--font-display);
+    font-size: clamp(2rem, 4vw, 3.2rem);
+    font-weight: 800;
+    line-height: 1.15;
+    margin-bottom: 20px;
+  }
+  .hero h1 em {
+    font-style: italic;
+    color: var(--accent);
+  }
+  .hero p {
+    font-size: 1.05rem;
+    color: var(--text-dim);
+    max-width: 640px;
+    line-height: 1.7;
+  }
+
+  /* === TABS === */
+  .tabs-container {
+    padding: 0 48px;
+    margin-bottom: 48px;
+  }
+  .tabs {
+    display: flex;
+    gap: 0;
+    border-bottom: 1px solid var(--border);
+  }
+  .tab {
+    padding: 16px 28px;
+    font-size: .82rem;
+    font-weight: 500;
+    color: var(--text-muted);
+    cursor: pointer;
+    border-bottom: 2px solid transparent;
+    transition: all .25s;
+    letter-spacing: .5px;
+    text-transform: uppercase;
+    user-select: none;
+  }
+  .tab:hover { color: var(--text-dim); }
+  .tab.active {
+    color: var(--accent);
+    border-bottom-color: var(--accent);
+  }
+
+  /* === SECTIONS === */
+  .section {
+    padding: 0 48px 64px;
+    display: none;
+    animation: fadeUp .4s ease;
+  }
+  .section.active { display: block; }
+
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(16px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  /* === COMPARISON === */
+  .comparison-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 32px;
+    margin-bottom: 48px;
+  }
+  .comp-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 32px;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 2px 12px rgba(0,0,0,.04);
+  }
+  .comp-card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 3px;
+  }
+  .comp-card.old::before { background: var(--red); }
+  .comp-card.new::before { background: var(--green); }
+
+  .comp-badge {
+    font-size: .65rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    padding: 4px 12px;
+    border-radius: 4px;
+    display: inline-block;
+    margin-bottom: 20px;
+    font-weight: 700;
+  }
+  .old .comp-badge { background: rgba(239,68,68,.12); color: var(--red); }
+  .new .comp-badge { background: rgba(34,197,94,.12); color: var(--green); }
+
+  .comp-card h3 {
+    font-family: var(--font-display);
+    font-size: 1.3rem;
+    margin-bottom: 24px;
+    font-weight: 600;
+  }
+  .nav-tree {
+    list-style: none;
+  }
+  .nav-tree li {
+    padding: 8px 0;
+    border-bottom: 1px solid rgba(0,0,0,.06);
+    font-size: .88rem;
+    color: var(--text-dim);
+  }
+  .nav-tree li:last-child { border-bottom: none; }
+  .nav-tree .parent {
+    font-weight: 700;
+    color: var(--text);
+    font-size: .92rem;
+  }
+  .nav-tree .child {
+    padding-left: 24px;
+    position: relative;
+  }
+  .nav-tree .child::before {
+    content: '└';
+    position: absolute;
+    left: 8px;
+    color: var(--text-muted);
+    font-size: .75rem;
+  }
+  .nav-tree .highlight {
+    color: var(--accent);
+    font-weight: 500;
+  }
+  .nav-tree .new-tag {
+    font-size: .6rem;
+    background: rgba(0,152,204,.1);
+    color: var(--accent);
+    padding: 2px 6px;
+    border-radius: 3px;
+    margin-left: 6px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    font-weight: 700;
+  }
+
+  /* === LANDING PAGES === */
+  .lp-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: 20px;
+  }
+  .lp-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 28px;
+    transition: all .3s;
+    cursor: default;
+    position: relative;
+  }
+  .lp-card:hover {
+    border-color: var(--accent);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 32px rgba(0,152,204,.1);
+  }
+  .lp-priority {
+    font-size: .6rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    font-weight: 700;
+    margin-bottom: 12px;
+  }
+  .lp-priority.p1 { color: var(--accent-warm); }
+  .lp-priority.p2 { color: var(--accent); }
+  .lp-priority.p3 { color: var(--text-muted); }
+  .lp-card h4 {
+    font-family: var(--font-display);
+    font-size: 1.1rem;
+    margin-bottom: 10px;
+    font-weight: 600;
+  }
+  .lp-card p {
+    font-size: .82rem;
+    color: var(--text-dim);
+    line-height: 1.6;
+    margin-bottom: 16px;
+  }
+  .lp-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+  }
+  .lp-tag {
+    font-size: .65rem;
+    padding: 3px 10px;
+    border-radius: 20px;
+    background: var(--surface-2);
+    color: var(--text-muted);
+    border: 1px solid var(--border);
+    letter-spacing: .3px;
+  }
+  .lp-tag.seo { border-color: rgba(0,194,255,.2); color: var(--accent); }
+  .lp-tag.ppc { border-color: rgba(255,107,53,.2); color: var(--accent-warm); }
+
+  /* === SEO TABLE === */
+  .seo-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: .82rem;
+  }
+  .seo-table th {
+    text-align: left;
+    padding: 14px 16px;
+    font-size: .68rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    border-bottom: 1px solid var(--border);
+    font-weight: 500;
+  }
+  .seo-table td {
+    padding: 14px 16px;
+    border-bottom: 1px solid rgba(0,0,0,.05);
+    color: var(--text-dim);
+    vertical-align: top;
+  }
+  .seo-table tr:hover td { background: rgba(0,0,0,.02); }
+  .slug-old {
+    text-decoration: line-through;
+    color: var(--red);
+    opacity: .6;
+    font-size: .78rem;
+    font-family: monospace;
+  }
+  .slug-new {
+    color: var(--green);
+    font-family: monospace;
+    font-size: .78rem;
+  }
+  .kw {
+    color: var(--accent);
+    font-weight: 500;
+  }
+
+  /* === SECTION HEADERS === */
+  .section-header {
+    margin-bottom: 36px;
+  }
+  .section-header h2 {
+    font-family: var(--font-display);
+    font-size: 1.6rem;
+    font-weight: 600;
+    margin-bottom: 8px;
+  }
+  .section-header p {
+    color: var(--text-dim);
+    font-size: .9rem;
+  }
+
+  /* === PHASE TIMELINE === */
+  .timeline {
+    position: relative;
+    padding-left: 36px;
+  }
+  .timeline::before {
+    content: '';
+    position: absolute;
+    left: 11px;
+    top: 8px;
+    bottom: 8px;
+    width: 1px;
+    background: var(--border);
+  }
+  .timeline-item {
+    position: relative;
+    margin-bottom: 36px;
+  }
+  .timeline-item::before {
+    content: '';
+    position: absolute;
+    left: -29px;
+    top: 8px;
+    width: 9px;
+    height: 9px;
+    border-radius: 50%;
+    background: var(--accent);
+    border: 2px solid var(--bg);
+    box-shadow: 0 0 0 3px var(--accent-glow);
+  }
+  .timeline-item h4 {
+    font-size: .92rem;
+    font-weight: 700;
+    margin-bottom: 6px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .phase-tag {
+    font-size: .58rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    padding: 3px 8px;
+    border-radius: 3px;
+    background: var(--accent-glow);
+    color: var(--accent);
+    font-weight: 700;
+  }
+  .timeline-item p {
+    font-size: .82rem;
+    color: var(--text-dim);
+    line-height: 1.65;
+  }
+
+  /* === RESPONSIVE === */
+  @media (max-width: 768px) {
+    .header, .hero, .tabs-container, .section { padding-left: 24px; padding-right: 24px; }
+    .comparison-grid { grid-template-columns: 1fr; }
+    .hero h1 { font-size: 1.8rem; }
+    .tabs { overflow-x: auto; }
+    .tab { white-space: nowrap; padding: 14px 18px; font-size: .72rem; }
+    .seo-table { font-size: .72rem; }
+    .lp-grid { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<div class="header">
+  <div class="header-brand">Dyntek Corp <span>× Next Wave Strategy</span></div>
+  <div class="header-meta">Navigation & LP Audit — Feb 2026</div>
+</div>
+
+<div class="hero">
+  <div class="hero-label">Strategic Recommendation</div>
+  <h1>Repositioning Dyntek as a <em>Facility Management</em> Leader</h1>
+  <p>A navigation restructure and landing page strategy to surface high-demand services, improve organic discoverability, and create proper conversion paths for paid media campaigns across the UAE market.</p>
+</div>
+
+<div class="tabs-container">
+  <div class="tabs">
+    <div class="tab active" data-tab="nav">Navigation</div>
+    <div class="tab" data-tab="pages">Landing Pages</div>
+    <div class="tab" data-tab="seo">SEO & URLs</div>
+    <div class="tab" data-tab="roadmap">Rollout Plan</div>
+  </div>
+</div>
+
+<!-- TAB 1: NAVIGATION -->
+<div class="section active" id="nav">
+  <div class="section-header">
+    <h2>Navigation Restructure</h2>
+    <p>Side-by-side comparison of the current vs. proposed menu architecture.</p>
+  </div>
+  <div class="comparison-grid">
+    <div class="comp-card old">
+      <div class="comp-badge">Current Structure</div>
+      <h3>Generic & Jargon-Heavy</h3>
+      <ul class="nav-tree">
+        <li class="parent">Home</li>
+        <li class="parent">Automation Solutions ▾</li>
+        <li class="child">Home Automation Solution</li>
+        <li class="child">Guest Room Management System</li>
+        <li class="child">Lighting Control System</li>
+        <li class="child">Smart Lock System</li>
+        <li class="child">Intercom System</li>
+        <li class="child">Smart Home Audio System</li>
+        <li class="parent">MEP Services ▾</li>
+        <li class="child">HVAC</li>
+        <li class="child">Electrical Works</li>
+        <li class="child">Plumbing and Drainage Works</li>
+        <li class="child">Annual Maintenance Contracts</li>
+        <li class="parent">About Us</li>
+        <li class="parent">Contact Us</li>
+      </ul>
+    </div>
+    <div class="comp-card new">
+      <div class="comp-badge">Proposed Structure</div>
+      <h3>Service-Led & SEO-Optimised</h3>
+      <ul class="nav-tree">
+        <li class="parent">Home</li>
+        <li class="parent highlight">Smart Automation ▾</li>
+        <li class="child">Home Automation</li>
+        <li class="child">Guest Room Management (GRMS)</li>
+        <li class="child">Lighting Control</li>
+        <li class="child">Smart Locks & Access</li>
+        <li class="child">Intercom Systems</li>
+        <li class="child">Audio & AV Systems</li>
+        <li class="parent highlight">Facility Management Services ▾</li>
+        <li class="child">Plumbing & Drainage</li>
+        <li class="child">HVAC Systems</li>
+        <li class="child">Electrical Works</li>
+        <li class="child highlight">Lighting Services <span class="new-tag">New</span></li>
+        <li class="child highlight">Mechanical Services <span class="new-tag">New</span></li>
+        <li class="child">Annual Maintenance (AMC)</li>
+        <li class="parent highlight">Projects <span class="new-tag">New</span></li>
+        <li class="parent">About</li>
+        <li class="parent">Contact</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="section-header" style="margin-top: 20px;">
+    <h2>What We're Recommending & Why</h2>
+  </div>
+  <div class="timeline">
+    <div class="timeline-item">
+      <h4>"MEP Services" → "Facility Management Services" <span class="phase-tag">Rename</span></h4>
+      <p>Customers search for "facility management," not "MEP." This rename instantly makes the brand more discoverable and accessible to property managers, hotel operators, and building owners in the UAE.</p>
+    </div>
+    <div class="timeline-item">
+      <h4>Add Lighting Services & Mechanical Services <span class="phase-tag">New Pages</span></h4>
+      <p>These are high-demand service categories that are currently invisible. Lighting services especially bridges the gap between their Automation and MEP divisions. Mechanical services covers pumps, fire suppression, and building mechanical systems.</p>
+    </div>
+    <div class="timeline-item">
+      <h4>Add Projects / Portfolio Page <span class="phase-tag">Trust Signal</span></h4>
+      <p>Zero social proof on the current site. A projects page with completed work — especially in hospitality and commercial — would dramatically increase conversion rates. This is table stakes in the UAE construction/MEP market.</p>
+    </div>
+    <div class="timeline-item">
+      <h4>Plumbing Elevated to First Position <span class="phase-tag">Priority</span></h4>
+      <p>Since the client specifically wants to foreground plumbing, it now leads the Facility Management dropdown. Order of services in the nav should reflect business priority and search demand.</p>
+    </div>
+  </div>
+</div>
+
+<!-- TAB 2: LANDING PAGES -->
+<div class="section" id="pages">
+  <div class="section-header">
+    <h2>Landing Pages Needed</h2>
+    <p>Prioritised by revenue impact and search opportunity. Each card shows the page type and its primary use case.</p>
+  </div>
+  <div class="lp-grid">
+    <div class="lp-card">
+      <div class="lp-priority p1">Priority 1 — Immediate</div>
+      <h4>Facility Management Services Hub</h4>
+      <p>Replace the current generic MEP page with a rich hub page that positions Dyntek as a full-service facility partner. Include service cards, trust badges, client logos, and a clear CTA path.</p>
+      <div class="lp-tags">
+        <span class="lp-tag seo">SEO</span>
+        <span class="lp-tag ppc">PPC Landing</span>
+        <span class="lp-tag">Hub Page</span>
+      </div>
+    </div>
+    <div class="lp-card">
+      <div class="lp-priority p1">Priority 1 — Immediate</div>
+      <h4>Plumbing & Drainage Services</h4>
+      <p>Dedicated landing page for plumbing — currently buried under MEP. Target keywords like "plumbing services Dubai," "plumbing contractor Sharjah." Include service scope, emergency callout info, and AMC upsell.</p>
+      <div class="lp-tags">
+        <span class="lp-tag seo">SEO</span>
+        <span class="lp-tag ppc">PPC Landing</span>
+        <span class="lp-tag">High Search Volume</span>
+      </div>
+    </div>
+    <div class="lp-card">
+      <div class="lp-priority p1">Priority 1 — Immediate</div>
+      <h4>Lighting Services</h4>
+      <p>New page covering commercial & residential lighting installation, LED retrofits, and emergency lighting. Bridges their Blueberry LED sister company and their automation lighting control service.</p>
+      <div class="lp-tags">
+        <span class="lp-tag seo">SEO</span>
+        <span class="lp-tag">New Service Page</span>
+        <span class="lp-tag">Cross-Sell</span>
+      </div>
+    </div>
+    <div class="lp-card">
+      <div class="lp-priority p1">Priority 1 — Immediate</div>
+      <h4>Mechanical Services</h4>
+      <p>New page for mechanical installations — pumps, fire suppression, gas systems, and building mechanical infrastructure. Completes the "M" in MEP that was previously absent as a standalone offering.</p>
+      <div class="lp-tags">
+        <span class="lp-tag seo">SEO</span>
+        <span class="lp-tag">New Service Page</span>
+      </div>
+    </div>
+    <div class="lp-card">
+      <div class="lp-priority p1">Priority 1 — Immediate</div>
+      <h4>Projects / Portfolio</h4>
+      <p>Showcase completed projects with images, scope of work, and outcomes. Categorise by sector (hospitality, commercial, residential). This is the #1 missing trust element on the site.</p>
+      <div class="lp-tags">
+        <span class="lp-tag">Social Proof</span>
+        <span class="lp-tag seo">SEO</span>
+        <span class="lp-tag">Conversion</span>
+      </div>
+    </div>
+    <div class="lp-card">
+      <div class="lp-priority p2">Priority 2 — Short Term</div>
+      <h4>Hospitality / Hotel Solutions</h4>
+      <p>Industry-specific page combining GRMS + HVAC + Lighting + AMC into a single hospitality offer. UAE hotel market is huge — this page targets hotel owners and hospitality procurement teams.</p>
+      <div class="lp-tags">
+        <span class="lp-tag ppc">PPC Landing</span>
+        <span class="lp-tag">Industry Vertical</span>
+        <span class="lp-tag">Cross-Sell</span>
+      </div>
+    </div>
+    <div class="lp-card">
+      <div class="lp-priority p2">Priority 2 — Short Term</div>
+      <h4>Commercial Building Solutions</h4>
+      <p>Targeting commercial property managers and developers. Bundle electrical + HVAC + plumbing + AMC into a single commercial offering page. Great for Google Ads campaigns.</p>
+      <div class="lp-tags">
+        <span class="lp-tag ppc">PPC Landing</span>
+        <span class="lp-tag">Industry Vertical</span>
+      </div>
+    </div>
+    <div class="lp-card">
+      <div class="lp-priority p2">Priority 2 — Short Term</div>
+      <h4>AMC — Annual Maintenance Hub</h4>
+      <p>Reposition AMC from a menu item to a dedicated conversion-focused landing page. This is recurring revenue — should have its own pricing tiers, service inclusions, and comparison table.</p>
+      <div class="lp-tags">
+        <span class="lp-tag ppc">PPC Landing</span>
+        <span class="lp-tag">Revenue Driver</span>
+        <span class="lp-tag">Conversion</span>
+      </div>
+    </div>
+    <div class="lp-card">
+      <div class="lp-priority p3">Priority 3 — Medium Term</div>
+      <h4>Villa / Residential Solutions</h4>
+      <p>Target villa owners and residential developers in Dubai, Sharjah, and Abu Dhabi. Combine home automation + MEP into a whole-home offer with premium positioning.</p>
+      <div class="lp-tags">
+        <span class="lp-tag seo">SEO</span>
+        <span class="lp-tag">Industry Vertical</span>
+      </div>
+    </div>
+    <div class="lp-card">
+      <div class="lp-priority p3">Priority 3 — Medium Term</div>
+      <h4>Smart Building Integration</h4>
+      <p>Thought-leadership page that positions Dyntek at the intersection of automation + facility management. Targets developers building new smart buildings in the UAE.</p>
+      <div class="lp-tags">
+        <span class="lp-tag seo">SEO</span>
+        <span class="lp-tag">Thought Leadership</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- TAB 3: SEO & URLs -->
+<div class="section" id="seo">
+  <div class="section-header">
+    <h2>URL Structure & Keyword Mapping</h2>
+    <p>Current slugs are keyword-stuffed and unfocused. Proposed slugs are clean, target one primary keyword each, and create proper SEO silos.</p>
+  </div>
+  <div style="overflow-x: auto;">
+    <table class="seo-table">
+      <thead>
+        <tr>
+          <th>Page</th>
+          <th>Current URL Slug</th>
+          <th>Proposed URL Slug</th>
+          <th>Primary Keyword</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Facility Mgmt Hub</td>
+          <td><span class="slug-old">/professional-mep-services-electricalplumbing-hvac-in-dubai/</span></td>
+          <td><span class="slug-new">/facility-management-services/</span></td>
+          <td><span class="kw">facility management services Dubai</span></td>
+        </tr>
+        <tr>
+          <td>Plumbing</td>
+          <td><span class="slug-old">/quality-plumbing-and-drainage-work-in-dubai/</span></td>
+          <td><span class="slug-new">/plumbing-services-dubai/</span></td>
+          <td><span class="kw">plumbing services Dubai</span></td>
+        </tr>
+        <tr>
+          <td>HVAC</td>
+          <td><span class="slug-old">/best-energy-efficient-hvac-systems-in-dubai/</span></td>
+          <td><span class="slug-new">/hvac-services-dubai/</span></td>
+          <td><span class="kw">HVAC services Dubai</span></td>
+        </tr>
+        <tr>
+          <td>Electrical</td>
+          <td><span class="slug-old">/expert-electrical-works-solutions-in-dubai/</span></td>
+          <td><span class="slug-new">/electrical-services-dubai/</span></td>
+          <td><span class="kw">electrical contractor Dubai</span></td>
+        </tr>
+        <tr>
+          <td>Lighting</td>
+          <td><span class="slug-old">— does not exist —</span></td>
+          <td><span class="slug-new">/lighting-services-dubai/</span></td>
+          <td><span class="kw">lighting installation Dubai</span></td>
+        </tr>
+        <tr>
+          <td>Mechanical</td>
+          <td><span class="slug-old">— does not exist —</span></td>
+          <td><span class="slug-new">/mechanical-services-dubai/</span></td>
+          <td><span class="kw">mechanical contractor UAE</span></td>
+        </tr>
+        <tr>
+          <td>AMC</td>
+          <td><span class="slug-old">/comprehensive-annual-maintenance-contracts-in-dubai/</span></td>
+          <td><span class="slug-new">/annual-maintenance-contracts/</span></td>
+          <td><span class="kw">AMC services Dubai</span></td>
+        </tr>
+        <tr>
+          <td>Home Automation</td>
+          <td><span class="slug-old">/smart-home-solutions-in-uae/</span></td>
+          <td><span class="slug-new">/smart-home-automation-dubai/</span></td>
+          <td><span class="kw">smart home automation Dubai</span></td>
+        </tr>
+        <tr>
+          <td>Lighting Control</td>
+          <td><span class="slug-old">/advance-wireless-lighting-control-in-dubai/</span></td>
+          <td><span class="slug-new">/lighting-control-systems/</span></td>
+          <td><span class="kw">lighting control system UAE</span></td>
+        </tr>
+        <tr>
+          <td>Projects</td>
+          <td><span class="slug-old">— does not exist —</span></td>
+          <td><span class="slug-new">/projects/</span></td>
+          <td><span class="kw">MEP projects Dubai</span></td>
+        </tr>
+        <tr>
+          <td>About</td>
+          <td><span class="slug-old">/expert-mep-and-home-automation-solutions-in-dubai/</span></td>
+          <td><span class="slug-new">/about/</span></td>
+          <td><span class="kw">— branded —</span></td>
+        </tr>
+        <tr>
+          <td>Contact</td>
+          <td><span class="slug-old">/expert-home-automation-mep-service-in-dubai/</span></td>
+          <td><span class="slug-new">/contact/</span></td>
+          <td><span class="kw">— branded —</span></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <div style="margin-top: 32px; padding: 24px; background: var(--surface); border: 1px solid var(--border); border-radius: 12px;">
+    <h4 style="font-family: var(--font-display); margin-bottom: 12px; font-size: 1rem;">URL Migration Notes</h4>
+    <p style="font-size: .82rem; color: var(--text-dim); line-height: 1.7;">Every renamed URL needs a 301 redirect from the old slug to the new slug. This preserves any existing SEO equity. The About and Contact pages currently have keyword-stuffed slugs that offer zero SEO value — clean them up to simple /about/ and /contact/. All new pages should follow the /service-keyword-location/ pattern for local SEO targeting across Dubai, Sharjah, and UAE.</p>
+  </div>
+</div>
+
+<!-- TAB 4: ROADMAP -->
+<div class="section" id="roadmap">
+  <div class="section-header">
+    <h2>Rollout Plan</h2>
+    <p>Phased approach to minimise disruption while maximising impact. Each phase builds on the previous one.</p>
+  </div>
+  <div class="timeline">
+    <div class="timeline-item">
+      <h4>Phase 1 — Foundation (Week 1–2) <span class="phase-tag">Quick Wins</span></h4>
+      <p>Rename "MEP Services" to "Facility Management Services" in the navigation. Reorder dropdown items with Plumbing first. Update About & Contact URL slugs. Set up 301 redirects for all changed URLs. Update internal linking across all pages.</p>
+    </div>
+    <div class="timeline-item">
+      <h4>Phase 2 — New Pages (Week 2–4) <span class="phase-tag">Content Build</span></h4>
+      <p>Create the Facility Management hub page. Build Lighting Services and Mechanical Services pages. Create the Projects/Portfolio page (even with 3–5 projects to start). Rewrite existing service pages with updated SEO-focused copy and cleaner slugs.</p>
+    </div>
+    <div class="timeline-item">
+      <h4>Phase 3 — Industry Pages (Week 4–6) <span class="phase-tag">Revenue Pages</span></h4>
+      <p>Build Hospitality Solutions and Commercial Building Solutions landing pages. Reposition AMC as a standalone conversion page with service tiers. These become the primary PPC landing pages for Google Ads campaigns.</p>
+    </div>
+    <div class="timeline-item">
+      <h4>Phase 4 — Optimise & Scale (Week 6–8) <span class="phase-tag">Performance</span></h4>
+      <p>Launch Google Ads campaigns pointing to new landing pages. Set up conversion tracking and form analytics. Begin schema markup for local SEO (Service, LocalBusiness, FAQ). Build Residential/Villa page and Smart Building page. Begin content marketing with blog posts targeting long-tail keywords.</p>
+    </div>
+  </div>
+</div>
+
+<script>
+  document.querySelectorAll('.tab').forEach(tab => {
+    tab.addEventListener('click', () => {
+      document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+      document.querySelectorAll('.section').forEach(s => s.classList.remove('active'));
+      tab.classList.add('active');
+      document.getElementById(tab.dataset.tab).classList.add('active');
+    });
+  });
+</script>
+
+</body>
+</html>
