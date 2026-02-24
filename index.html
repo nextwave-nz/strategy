@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Next Wave — Client Strategy Portal</title>
+
+<!-- Open Graph / Social Media Preview -->
+<meta property="og:type" content="website">
+<meta property="og:title" content="Next Wave — Client Strategy Portal">
+<meta property="og:description" content="AI-powered digital marketing strategies, navigation audits, and landing page roadmaps by Next Wave.">
+<meta property="og:url" content="https://strategy.nextwave.nz/">
+<meta property="og:image" content="https://strategy.nextwave.nz/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Next Wave — Client Strategy Portal">
+<meta name="twitter:description" content="AI-powered digital marketing strategies, navigation audits, and landing page roadmaps by Next Wave.">
+<meta name="twitter:image" content="https://strategy.nextwave.nz/og-image.png">
+
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,500;0,9..40,700;1,9..40,400&family=Playfair+Display:wght@600;800&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #FAFBFD;
+    --surface: #FFFFFF;
+    --border: #E2E7EF;
+    --accent: #0098CC;
+    --accent-dark: #007AA3;
+    --accent-glow: rgba(0,152,204,.08);
+    --warm: #E85A2A;
+    --text: #111827;
+    --text-dim: #4B5563;
+    --text-muted: #9CA3AF;
+    --font-display: 'Playfair Display', Georgia, serif;
+    --font-body: 'DM Sans', system-ui, sans-serif;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: var(--font-body);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 40px 24px;
+    overflow-x: hidden;
+  }
+
+  /* Subtle background pattern */
+  body::before {
+    content: '';
+    position: fixed;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background:
+      radial-gradient(circle at 20% 20%, rgba(0,152,204,.04) 0%, transparent 50%),
+      radial-gradient(circle at 80% 80%, rgba(232,90,42,.03) 0%, transparent 50%);
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  .container {
+    max-width: 720px;
+    width: 100%;
+    position: relative;
+    z-index: 1;
+  }
+
+  /* Brand */
+  .brand {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 56px;
+  }
+  .brand-icon {
+    width: 40px;
+    height: 40px;
+    background: var(--accent);
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-weight: 700;
+    font-size: 1.1rem;
+    box-shadow: 0 4px 16px rgba(0,152,204,.25);
+  }
+  .brand-text {
+    font-size: .82rem;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    font-weight: 500;
+  }
+
+  /* Hero */
+  .hero {
+    margin-bottom: 56px;
+  }
+  .hero h1 {
+    font-family: var(--font-display);
+    font-size: clamp(2.2rem, 5vw, 3.4rem);
+    font-weight: 800;
+    line-height: 1.12;
+    margin-bottom: 16px;
+    color: var(--text);
+  }
+  .hero h1 em {
+    font-style: italic;
+    color: var(--accent);
+  }
+  .hero p {
+    font-size: 1.1rem;
+    color: var(--text-dim);
+    line-height: 1.7;
+    max-width: 560px;
+  }
+
+  /* Divider */
+  .divider {
+    width: 48px;
+    height: 3px;
+    background: var(--accent);
+    border-radius: 2px;
+    margin-bottom: 40px;
+  }
+
+  /* Section label */
+  .section-label {
+    font-size: .68rem;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    margin-bottom: 20px;
+    font-weight: 500;
+  }
+
+  /* Client cards */
+  .client-grid {
+    display: grid;
+    gap: 16px;
+    margin-bottom: 64px;
+  }
+
+  .client-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    padding: 28px 32px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    text-decoration: none;
+    color: var(--text);
+    transition: all .25s ease;
+    position: relative;
+    overflow: hidden;
+  }
+  .client-card::before {
+    content: '';
+    position: absolute;
+    left: 0; top: 0; bottom: 0;
+    width: 3px;
+    background: var(--accent);
+    opacity: 0;
+    transition: opacity .25s;
+  }
+  .client-card:hover {
+    border-color: var(--accent);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 32px rgba(0,152,204,.08);
+  }
+  .client-card:hover::before {
+    opacity: 1;
+  }
+
+  .client-info {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+  }
+  .client-name {
+    font-family: var(--font-display);
+    font-size: 1.15rem;
+    font-weight: 600;
+  }
+  .client-desc {
+    font-size: .82rem;
+    color: var(--text-dim);
+  }
+  .client-date {
+    font-size: .72rem;
+    color: var(--text-muted);
+    letter-spacing: .5px;
+  }
+
+  .client-arrow {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background: var(--accent-glow);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--accent);
+    flex-shrink: 0;
+    transition: all .25s;
+  }
+  .client-card:hover .client-arrow {
+    background: var(--accent);
+    color: white;
+  }
+
+  /* Empty state for future clients */
+  .client-card.upcoming {
+    border-style: dashed;
+    opacity: .5;
+    pointer-events: none;
+  }
+
+  /* Footer */
+  .footer {
+    text-align: center;
+    padding-top: 20px;
+    border-top: 1px solid var(--border);
+    width: 100%;
+  }
+  .footer p {
+    font-size: .75rem;
+    color: var(--text-muted);
+    line-height: 1.8;
+  }
+  .footer a {
+    color: var(--accent);
+    text-decoration: none;
+  }
+  .footer a:hover {
+    text-decoration: underline;
+  }
+
+  /* Password gate overlay - for future use */
+  .locked-badge {
+    font-size: .6rem;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    padding: 3px 8px;
+    border-radius: 4px;
+    background: rgba(0,152,204,.08);
+    color: var(--accent);
+    font-weight: 700;
+    margin-left: 8px;
+  }
+
+  @media (max-width: 600px) {
+    body { padding: 32px 16px; }
+    .client-card { padding: 22px 20px; }
+    .hero h1 { font-size: 2rem; }
+  }
+</style>
+</head>
+<body>
+
+<div class="container">
+
+  <div class="brand">
+    <div class="brand-icon">N</div>
+    <div class="brand-text">Next Wave</div>
+  </div>
+
+  <div class="hero">
+    <h1>Client <em>Strategy</em> Portal</h1>
+    <p>AI-powered digital marketing strategies, navigation audits, and conversion roadmaps — prepared exclusively for our clients.</p>
+  </div>
+
+  <div class="divider"></div>
+
+  <div class="section-label">Active Strategies</div>
+
+  <div class="client-grid">
+    <a href="/dyntek/" class="client-card">
+      <div class="client-info">
+        <div class="client-name">Dyntek Corp</div>
+        <div class="client-desc">Navigation Restructure & Landing Page Strategy — UAE Market</div>
+        <div class="client-date">February 2026</div>
+      </div>
+      <div class="client-arrow">
+        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M6 3l5 5-5 5"/>
+        </svg>
+      </div>
+    </a>
+
+    <div class="client-card upcoming">
+      <div class="client-info">
+        <div class="client-name">Your Next Client</div>
+        <div class="client-desc">Strategy documents will appear here as they're created</div>
+        <div class="client-date">Coming soon</div>
+      </div>
+      <div class="client-arrow">
+        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M6 3l5 5-5 5"/>
+        </svg>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer">
+    <p>Prepared by <a href="https://nextwave.nz" target="_blank">Next Wave</a> — AI-Powered Digital Marketing Agency, New Zealand</p>
+    <p style="margin-top: 4px;">&copy; 2026 Next Wave. Confidential — for client use only.</p>
+  </div>
+
+</div>
+
+</body>
+</html>
