@@ -3,12 +3,12 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Dyntek Corp — Navigation & Landing Page Strategy</title>
+<title>Dyntek Corp - Digital Marketing Strategy</title>
 
 <!-- Open Graph / Social Media Preview -->
 <meta property="og:type" content="website">
-<meta property="og:title" content="Dyntek Corp — Navigation & Landing Page Strategy">
-<meta property="og:description" content="A strategic navigation restructure and landing page roadmap to reposition Dyntek Corp as a Facility Management leader in the UAE market.">
+<meta property="og:title" content="Dyntek Corp - Digital Marketing Strategy">
+<meta property="og:description" content="Complete digital strategy for Dyntek Corp - navigation restructure, landing pages, 12-month SEO roadmap, and paid media plan for the UAE market.">
 <meta property="og:url" content="https://strategy.nextwave.nz/dyntek/">
 <meta property="og:image" content="https://strategy.nextwave.nz/dyntek/og-image.png">
 <meta property="og:image:width" content="1200">
@@ -16,7 +16,7 @@
 
 <!-- Twitter Card -->
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Dyntek Corp — Navigation & Landing Page Strategy">
+<meta name="twitter:title" content="Dyntek Corp - Navigation & Landing Page Strategy">
 <meta name="twitter:description" content="A strategic navigation restructure and landing page roadmap to reposition Dyntek Corp as a Facility Management leader in the UAE market.">
 <meta name="twitter:image" content="https://strategy.nextwave.nz/dyntek/og-image.png">
 
@@ -304,6 +304,150 @@
   }
   .lp-tag.seo { border-color: rgba(0,194,255,.2); color: var(--accent); }
   .lp-tag.ppc { border-color: rgba(255,107,53,.2); color: var(--accent-warm); }
+  .lp-tag.meta { border-color: rgba(99,102,241,.25); color: #6366F1; }
+
+  /* === MONTH GRID === */
+  .month-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+    gap: 16px;
+    margin-bottom: 40px;
+  }
+  .month-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 24px;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(0,0,0,.03);
+  }
+  .month-card::before {
+    content: '';
+    position: absolute;
+    left: 0; top: 0; bottom: 0;
+    width: 3px;
+  }
+  .month-card.q1::before { background: var(--accent); }
+  .month-card.q2::before { background: var(--accent-warm); }
+  .month-card.q3::before { background: var(--green); }
+  .month-card.q4::before { background: #6366F1; }
+
+  .month-label {
+    font-size: .6rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    font-weight: 700;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .month-card.q1 .month-label { color: var(--accent); }
+  .month-card.q2 .month-label { color: var(--accent-warm); }
+  .month-card.q3 .month-label { color: var(--green); }
+  .month-card.q4 .month-label { color: #6366F1; }
+
+  .month-card h4 {
+    font-family: var(--font-display);
+    font-size: 1rem;
+    font-weight: 600;
+    margin-bottom: 10px;
+  }
+  .month-card p {
+    font-size: .8rem;
+    color: var(--text-dim);
+    line-height: 1.65;
+  }
+  .month-card ul {
+    list-style: none;
+    padding: 0;
+  }
+  .month-card ul li {
+    font-size: .8rem;
+    color: var(--text-dim);
+    line-height: 1.65;
+    padding: 4px 0;
+    padding-left: 18px;
+    position: relative;
+  }
+  .month-card ul li::before {
+    content: '→';
+    position: absolute;
+    left: 0;
+    color: var(--text-muted);
+    font-size: .7rem;
+  }
+
+  /* Quarter header */
+  .quarter-header {
+    margin-bottom: 16px;
+    margin-top: 36px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+  .quarter-header:first-child { margin-top: 0; }
+  .quarter-badge {
+    font-size: .6rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    font-weight: 700;
+    padding: 4px 12px;
+    border-radius: 4px;
+  }
+  .quarter-badge.q1 { background: rgba(0,152,204,.1); color: var(--accent); }
+  .quarter-badge.q2 { background: rgba(232,90,42,.1); color: var(--accent-warm); }
+  .quarter-badge.q3 { background: rgba(22,135,74,.1); color: var(--green); }
+  .quarter-badge.q4 { background: rgba(99,102,241,.1); color: #6366F1; }
+  .quarter-header h3 {
+    font-family: var(--font-display);
+    font-size: 1.15rem;
+    font-weight: 600;
+  }
+
+  /* KPI boxes */
+  .kpi-row {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+    gap: 12px;
+    margin-bottom: 36px;
+  }
+  .kpi-box {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 18px 20px;
+    text-align: center;
+  }
+  .kpi-box .kpi-value {
+    font-family: var(--font-display);
+    font-size: 1.4rem;
+    font-weight: 800;
+    color: var(--accent);
+    margin-bottom: 4px;
+  }
+  .kpi-box .kpi-label {
+    font-size: .68rem;
+    color: var(--text-muted);
+    letter-spacing: .5px;
+    text-transform: uppercase;
+  }
+
+  /* Channel badge */
+  .channel-badge {
+    display: inline-block;
+    font-size: .58rem;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    font-weight: 700;
+    padding: 3px 8px;
+    border-radius: 3px;
+    margin-right: 6px;
+  }
+  .channel-badge.google { background: rgba(0,152,204,.1); color: var(--accent); }
+  .channel-badge.meta { background: rgba(99,102,241,.1); color: #6366F1; }
+  .channel-badge.seo-ch { background: rgba(22,135,74,.1); color: var(--green); }
 
   /* === SEO TABLE === */
   .seo-table {
@@ -430,13 +574,13 @@
 
 <div class="header">
   <div class="header-brand">Dyntek Corp <span>× Next Wave Strategy</span></div>
-  <div class="header-meta">Navigation & LP Audit — Feb 2026</div>
+  <div class="header-meta">Digital Marketing Strategy - Feb 2026</div>
 </div>
 
 <div class="hero">
   <div class="hero-label">Strategic Recommendation</div>
   <h1>Repositioning Dyntek as a <em>Facility Management</em> Leader</h1>
-  <p>A navigation restructure and landing page strategy to surface high-demand services, improve organic discoverability, and create proper conversion paths for paid media campaigns across the UAE market.</p>
+  <p>A complete digital marketing strategy covering navigation restructure, landing pages, 12-month SEO roadmap, and paid media plan to dominate the UAE facility management market.</p>
 </div>
 
 <div class="tabs-container">
@@ -444,6 +588,8 @@
     <div class="tab active" data-tab="nav">Navigation</div>
     <div class="tab" data-tab="pages">Landing Pages</div>
     <div class="tab" data-tab="seo">SEO & URLs</div>
+    <div class="tab" data-tab="seostrategy">SEO Roadmap</div>
+    <div class="tab" data-tab="paidmedia">Paid Media</div>
     <div class="tab" data-tab="roadmap">Rollout Plan</div>
   </div>
 </div>
@@ -516,7 +662,7 @@
     </div>
     <div class="timeline-item">
       <h4>Add Projects / Portfolio Page <span class="phase-tag">Trust Signal</span></h4>
-      <p>Zero social proof on the current site. A projects page with completed work — especially in hospitality and commercial — would dramatically increase conversion rates. This is table stakes in the UAE construction/MEP market.</p>
+      <p>Zero social proof on the current site. A projects page with completed work - especially in hospitality and commercial - would dramatically increase conversion rates. This is table stakes in the UAE construction/MEP market.</p>
     </div>
     <div class="timeline-item">
       <h4>Plumbing Elevated to First Position <span class="phase-tag">Priority</span></h4>
@@ -533,7 +679,7 @@
   </div>
   <div class="lp-grid">
     <div class="lp-card">
-      <div class="lp-priority p1">Priority 1 — Immediate</div>
+      <div class="lp-priority p1">Priority 1 - Immediate</div>
       <h4>Facility Management Services Hub</h4>
       <p>Replace the current generic MEP page with a rich hub page that positions Dyntek as a full-service facility partner. Include service cards, trust badges, client logos, and a clear CTA path.</p>
       <div class="lp-tags">
@@ -543,9 +689,9 @@
       </div>
     </div>
     <div class="lp-card">
-      <div class="lp-priority p1">Priority 1 — Immediate</div>
+      <div class="lp-priority p1">Priority 1 - Immediate</div>
       <h4>Plumbing & Drainage Services</h4>
-      <p>Dedicated landing page for plumbing — currently buried under MEP. Target keywords like "plumbing services Dubai," "plumbing contractor Sharjah." Include service scope, emergency callout info, and AMC upsell.</p>
+      <p>Dedicated landing page for plumbing - currently buried under MEP. Target keywords like "plumbing services Dubai," "plumbing contractor Sharjah." Include service scope, emergency callout info, and AMC upsell.</p>
       <div class="lp-tags">
         <span class="lp-tag seo">SEO</span>
         <span class="lp-tag ppc">PPC Landing</span>
@@ -553,7 +699,7 @@
       </div>
     </div>
     <div class="lp-card">
-      <div class="lp-priority p1">Priority 1 — Immediate</div>
+      <div class="lp-priority p1">Priority 1 - Immediate</div>
       <h4>Lighting Services</h4>
       <p>New page covering commercial & residential lighting installation, LED retrofits, and emergency lighting. Bridges their Blueberry LED sister company and their automation lighting control service.</p>
       <div class="lp-tags">
@@ -563,16 +709,16 @@
       </div>
     </div>
     <div class="lp-card">
-      <div class="lp-priority p1">Priority 1 — Immediate</div>
+      <div class="lp-priority p1">Priority 1 - Immediate</div>
       <h4>Mechanical Services</h4>
-      <p>New page for mechanical installations — pumps, fire suppression, gas systems, and building mechanical infrastructure. Completes the "M" in MEP that was previously absent as a standalone offering.</p>
+      <p>New page for mechanical installations - pumps, fire suppression, gas systems, and building mechanical infrastructure. Completes the "M" in MEP that was previously absent as a standalone offering.</p>
       <div class="lp-tags">
         <span class="lp-tag seo">SEO</span>
         <span class="lp-tag">New Service Page</span>
       </div>
     </div>
     <div class="lp-card">
-      <div class="lp-priority p1">Priority 1 — Immediate</div>
+      <div class="lp-priority p1">Priority 1 - Immediate</div>
       <h4>Projects / Portfolio</h4>
       <p>Showcase completed projects with images, scope of work, and outcomes. Categorise by sector (hospitality, commercial, residential). This is the #1 missing trust element on the site.</p>
       <div class="lp-tags">
@@ -582,9 +728,9 @@
       </div>
     </div>
     <div class="lp-card">
-      <div class="lp-priority p2">Priority 2 — Short Term</div>
+      <div class="lp-priority p2">Priority 2 - Short Term</div>
       <h4>Hospitality / Hotel Solutions</h4>
-      <p>Industry-specific page combining GRMS + HVAC + Lighting + AMC into a single hospitality offer. UAE hotel market is huge — this page targets hotel owners and hospitality procurement teams.</p>
+      <p>Industry-specific page combining GRMS + HVAC + Lighting + AMC into a single hospitality offer. UAE hotel market is huge - this page targets hotel owners and hospitality procurement teams.</p>
       <div class="lp-tags">
         <span class="lp-tag ppc">PPC Landing</span>
         <span class="lp-tag">Industry Vertical</span>
@@ -592,7 +738,7 @@
       </div>
     </div>
     <div class="lp-card">
-      <div class="lp-priority p2">Priority 2 — Short Term</div>
+      <div class="lp-priority p2">Priority 2 - Short Term</div>
       <h4>Commercial Building Solutions</h4>
       <p>Targeting commercial property managers and developers. Bundle electrical + HVAC + plumbing + AMC into a single commercial offering page. Great for Google Ads campaigns.</p>
       <div class="lp-tags">
@@ -601,9 +747,9 @@
       </div>
     </div>
     <div class="lp-card">
-      <div class="lp-priority p2">Priority 2 — Short Term</div>
-      <h4>AMC — Annual Maintenance Hub</h4>
-      <p>Reposition AMC from a menu item to a dedicated conversion-focused landing page. This is recurring revenue — should have its own pricing tiers, service inclusions, and comparison table.</p>
+      <div class="lp-priority p2">Priority 2 - Short Term</div>
+      <h4>AMC - Annual Maintenance Hub</h4>
+      <p>Reposition AMC from a menu item to a dedicated conversion-focused landing page. This is recurring revenue - should have its own pricing tiers, service inclusions, and comparison table.</p>
       <div class="lp-tags">
         <span class="lp-tag ppc">PPC Landing</span>
         <span class="lp-tag">Revenue Driver</span>
@@ -611,7 +757,7 @@
       </div>
     </div>
     <div class="lp-card">
-      <div class="lp-priority p3">Priority 3 — Medium Term</div>
+      <div class="lp-priority p3">Priority 3 - Medium Term</div>
       <h4>Villa / Residential Solutions</h4>
       <p>Target villa owners and residential developers in Dubai, Sharjah, and Abu Dhabi. Combine home automation + MEP into a whole-home offer with premium positioning.</p>
       <div class="lp-tags">
@@ -620,7 +766,7 @@
       </div>
     </div>
     <div class="lp-card">
-      <div class="lp-priority p3">Priority 3 — Medium Term</div>
+      <div class="lp-priority p3">Priority 3 - Medium Term</div>
       <h4>Smart Building Integration</h4>
       <p>Thought-leadership page that positions Dyntek at the intersection of automation + facility management. Targets developers building new smart buildings in the UAE.</p>
       <div class="lp-tags">
@@ -674,13 +820,13 @@
         </tr>
         <tr>
           <td>Lighting</td>
-          <td><span class="slug-old">— does not exist —</span></td>
+          <td><span class="slug-old">- does not exist -</span></td>
           <td><span class="slug-new">/lighting-services-dubai/</span></td>
           <td><span class="kw">lighting installation Dubai</span></td>
         </tr>
         <tr>
           <td>Mechanical</td>
-          <td><span class="slug-old">— does not exist —</span></td>
+          <td><span class="slug-old">- does not exist -</span></td>
           <td><span class="slug-new">/mechanical-services-dubai/</span></td>
           <td><span class="kw">mechanical contractor UAE</span></td>
         </tr>
@@ -704,7 +850,7 @@
         </tr>
         <tr>
           <td>Projects</td>
-          <td><span class="slug-old">— does not exist —</span></td>
+          <td><span class="slug-old">- does not exist -</span></td>
           <td><span class="slug-new">/projects/</span></td>
           <td><span class="kw">MEP projects Dubai</span></td>
         </tr>
@@ -712,20 +858,477 @@
           <td>About</td>
           <td><span class="slug-old">/expert-mep-and-home-automation-solutions-in-dubai/</span></td>
           <td><span class="slug-new">/about/</span></td>
-          <td><span class="kw">— branded —</span></td>
+          <td><span class="kw">- branded -</span></td>
         </tr>
         <tr>
           <td>Contact</td>
           <td><span class="slug-old">/expert-home-automation-mep-service-in-dubai/</span></td>
           <td><span class="slug-new">/contact/</span></td>
-          <td><span class="kw">— branded —</span></td>
+          <td><span class="kw">- branded -</span></td>
         </tr>
       </tbody>
     </table>
   </div>
   <div style="margin-top: 32px; padding: 24px; background: var(--surface); border: 1px solid var(--border); border-radius: 12px;">
     <h4 style="font-family: var(--font-display); margin-bottom: 12px; font-size: 1rem;">URL Migration Notes</h4>
-    <p style="font-size: .82rem; color: var(--text-dim); line-height: 1.7;">Every renamed URL needs a 301 redirect from the old slug to the new slug. This preserves any existing SEO equity. The About and Contact pages currently have keyword-stuffed slugs that offer zero SEO value — clean them up to simple /about/ and /contact/. All new pages should follow the /service-keyword-location/ pattern for local SEO targeting across Dubai, Sharjah, and UAE.</p>
+    <p style="font-size: .82rem; color: var(--text-dim); line-height: 1.7;">Every renamed URL needs a 301 redirect from the old slug to the new slug. This preserves any existing SEO equity. The About and Contact pages currently have keyword-stuffed slugs that offer zero SEO value - clean them up to simple /about/ and /contact/. All new pages should follow the /service-keyword-location/ pattern for local SEO targeting across Dubai, Sharjah, and UAE.</p>
+  </div>
+</div>
+
+<!-- TAB 5: SEO ROADMAP -->
+<div class="section" id="seostrategy">
+  <div class="section-header">
+    <h2>12-Month SEO Roadmap</h2>
+    <p>Organic growth strategy starting June 2026 (post website launch in May). Includes Google Business Profile as a core ranking pillar. All activity is sequenced around the website going live first.</p>
+  </div>
+
+  <div class="kpi-row">
+    <div class="kpi-box">
+      <div class="kpi-value">50+</div>
+      <div class="kpi-label">Target Keywords</div>
+    </div>
+    <div class="kpi-box">
+      <div class="kpi-value">12</div>
+      <div class="kpi-label">New Pages</div>
+    </div>
+    <div class="kpi-box">
+      <div class="kpi-value">48</div>
+      <div class="kpi-label">Blog Posts (Year)</div>
+    </div>
+    <div class="kpi-box">
+      <div class="kpi-value">Top 3</div>
+      <div class="kpi-label">Ranking Goal</div>
+    </div>
+  </div>
+
+  <!-- PRE-LAUNCH -->
+  <div class="quarter-header">
+    <span class="quarter-badge q1">PRE-LAUNCH</span>
+    <h3>Website Build Phase (March - May 2026)</h3>
+  </div>
+  <div class="month-grid">
+    <div class="month-card q1">
+      <div class="month-label">March - April 2026</div>
+      <h4>SEO-Ready Website Build</h4>
+      <ul>
+        <li>Implement new navigation structure (from Navigation tab) during the website build</li>
+        <li>Build all Priority 1 service pages with SEO-optimised content baked in from day one</li>
+        <li>Use clean URL slugs (from SEO and URLs tab) on every page before launch</li>
+        <li>Add schema markup during development: LocalBusiness, Service, Organization, FAQ</li>
+        <li>Ensure all pages have unique meta titles, descriptions, and proper heading hierarchy</li>
+        <li>Set up 301 redirects from all old URLs to new URLs before going live</li>
+        <li>Optimise page speed, mobile responsiveness, and Core Web Vitals during build</li>
+      </ul>
+    </div>
+    <div class="month-card q1">
+      <div class="month-label">May 2026</div>
+      <h4>Launch + Google Business Profile Setup</h4>
+      <ul>
+        <li>Launch the new website with all service pages, Projects page, and updated navigation</li>
+        <li>Submit XML sitemap to Google Search Console immediately after launch</li>
+        <li>Set up Google Analytics 4 and Google Search Console with conversion tracking</li>
+        <li>Claim and fully optimise Google Business Profile (GBP): business name, categories, description, service areas, photos, hours</li>
+        <li>Select primary GBP category: "Facility Management Company" with secondary categories for each service (Plumber, HVAC Contractor, Electrician, etc.)</li>
+        <li>Add all services to GBP with descriptions and pricing ranges</li>
+        <li>Upload 20+ high-quality photos to GBP: office, team, completed projects, equipment</li>
+        <li>Set up rank tracking tools for 50+ target keywords</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- Q1 POST LAUNCH -->
+  <div class="quarter-header">
+    <span class="quarter-badge q1">Q1</span>
+    <h3>Post-Launch SEO Foundation (June - August 2026)</h3>
+  </div>
+  <div class="month-grid">
+    <div class="month-card q1">
+      <div class="month-label">Month 1 / June 2026</div>
+      <h4>Technical Audit + Content Kickoff</h4>
+      <ul>
+        <li>Post-launch technical audit: check indexation, crawl errors, broken links, redirect chains</li>
+        <li>Verify all pages are indexed and appearing in Google Search Console</li>
+        <li>Begin GBP posting schedule: 2 posts per week (project updates, tips, service highlights)</li>
+        <li>Start review acquisition strategy: request reviews from existing clients, add review links to email signatures and invoices</li>
+        <li>Publish 4 blog posts targeting long-tail keywords ("how to choose HVAC system Dubai", "plumbing maintenance tips Sharjah")</li>
+        <li>Set up internal linking architecture across all service pages</li>
+      </ul>
+    </div>
+    <div class="month-card q1">
+      <div class="month-label">Month 2 / July 2026</div>
+      <h4>Content Expansion + Local Citations</h4>
+      <ul>
+        <li>Build Hospitality Solutions landing page (combines GRMS + HVAC + AMC for hotel market)</li>
+        <li>Build Commercial Building Solutions page (offices, retail, mixed-use)</li>
+        <li>Submit business to 30+ UAE local directories and citation sources (Yellow Pages UAE, Dubai Business Directory, Sharjah Chamber)</li>
+        <li>Ensure NAP consistency (Name, Address, Phone) across all citations and GBP</li>
+        <li>Publish 4 blog posts targeting hospitality and commercial queries</li>
+        <li>Add FAQ schema to all service pages (5-8 FAQs per page)</li>
+        <li>Respond to all GBP reviews and Q&A within 24 hours</li>
+      </ul>
+    </div>
+    <div class="month-card q1">
+      <div class="month-label">Month 3 / August 2026</div>
+      <h4>AMC Push + Location Pages</h4>
+      <ul>
+        <li>Reposition AMC page as a standalone conversion page with service tiers and inclusions</li>
+        <li>Create location-specific pages: "plumbing services Sharjah", "HVAC services Dubai", "electrical contractor Abu Dhabi"</li>
+        <li>Build Villa/Residential Solutions page combining automation + facility management</li>
+        <li>Publish 4 blog posts ("annual maintenance contract benefits UAE", "smart villa solutions Dubai")</li>
+        <li>Begin backlink outreach to UAE construction and property blogs</li>
+        <li>GBP: add products/services section, upload new project photos weekly</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- Q2 -->
+  <div class="quarter-header">
+    <span class="quarter-badge q2">Q2</span>
+    <h3>Content Scaling + Authority (September - November 2026)</h3>
+  </div>
+  <div class="month-grid">
+    <div class="month-card q2">
+      <div class="month-label">Month 4 / September 2026</div>
+      <h4>Mid-Point Review + Content Clusters</h4>
+      <ul>
+        <li>Full performance review: rankings, traffic, conversions, top-performing pages</li>
+        <li>Refresh and expand underperforming pages based on Search Console data</li>
+        <li>Begin building content clusters: Plumbing hub (5+ supporting articles), HVAC hub (5+ articles)</li>
+        <li>Create "Ultimate Guide" cornerstone content for plumbing and HVAC services</li>
+        <li>Publish 4 blog posts in cluster strategy format</li>
+        <li>GBP: aim for 30+ reviews by this point, continue weekly posting</li>
+      </ul>
+    </div>
+    <div class="month-card q2">
+      <div class="month-label">Month 5 / October 2026</div>
+      <h4>Automation Content + Cross-Sell</h4>
+      <ul>
+        <li>Build content cluster around smart home automation (hub + 5 supporting pieces)</li>
+        <li>Create cross-linking between Blueberry LED (sister company) and Lighting Services page</li>
+        <li>Create comparison content ("central vs split AC Dubai", "smart locks vs traditional")</li>
+        <li>Publish 4 blog posts (focus: "smart home ROI Dubai", "lighting automation benefits")</li>
+        <li>Continue backlink acquisition: target 5-8 quality links per month</li>
+        <li>GBP: add Q&A section with pre-populated common questions</li>
+      </ul>
+    </div>
+    <div class="month-card q2">
+      <div class="month-label">Month 6 / November 2026</div>
+      <h4>Conversion Optimisation</h4>
+      <ul>
+        <li>CRO audit on all landing pages: form placement, CTAs, social proof, trust signals</li>
+        <li>Add detailed case studies to Projects page (scope of work, outcomes, client testimonials)</li>
+        <li>Implement live chat or callback widget for lead capture (no VoIP-dependent tools)</li>
+        <li>Publish 4 blog posts targeting bottom-of-funnel queries ("best MEP contractor Dubai")</li>
+        <li>Refresh all meta descriptions based on CTR data from Search Console</li>
+        <li>GBP: aim for 50+ reviews, optimise GBP description based on keyword performance</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- Q3 -->
+  <div class="quarter-header">
+    <span class="quarter-badge q3">Q3</span>
+    <h3>Authority Building + Expansion (December 2026 - February 2027)</h3>
+  </div>
+  <div class="month-grid">
+    <div class="month-card q3">
+      <div class="month-label">Month 7 / December 2026</div>
+      <h4>Competitive Gap Analysis</h4>
+      <ul>
+        <li>Full competitive analysis: identify keywords competitors rank for that Dyntek does not</li>
+        <li>Create targeted content to close those gaps</li>
+        <li>Build resource/knowledge centre section on the website</li>
+        <li>Video content: create and embed service explainer videos on key pages</li>
+        <li>Publish 4 blog posts targeting competitive keywords</li>
+        <li>Pursue high-authority backlinks from UAE industry associations and directories</li>
+      </ul>
+    </div>
+    <div class="month-card q3">
+      <div class="month-label">Month 8 / January 2027</div>
+      <h4>Smart Building + Thought Leadership</h4>
+      <ul>
+        <li>Build Smart Building Integration thought-leadership page</li>
+        <li>Target "near me" and voice search queries with conversational content</li>
+        <li>Create industry whitepapers or downloadable guides for lead generation</li>
+        <li>Publish 4 blog posts focused on industry trends and thought leadership</li>
+        <li>GBP: add virtual tour if office/showroom available, maintain weekly post cadence</li>
+        <li>Guest post outreach to UAE property, construction, and hospitality publications</li>
+      </ul>
+    </div>
+    <div class="month-card q3">
+      <div class="month-label">Month 9 / February 2027</div>
+      <h4>Arabic Content + Multi-Language SEO</h4>
+      <ul>
+        <li>Build Arabic-language service pages for key services (plumbing, HVAC, electrical)</li>
+        <li>Implement hreflang tags for bilingual content</li>
+        <li>Create Arabic GBP posts and service descriptions</li>
+        <li>Publish 4 blog posts in bilingual format</li>
+        <li>Advanced Core Web Vitals optimisation: LCP, FID, CLS improvements</li>
+        <li>Full local SEO audit: citations, GBP, reviews, local pack ranking positions</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- Q4 -->
+  <div class="quarter-header">
+    <span class="quarter-badge q4">Q4</span>
+    <h3>Scale + Dominate (March - May 2027)</h3>
+  </div>
+  <div class="month-grid">
+    <div class="month-card q4">
+      <div class="month-label">Month 10 / March 2027</div>
+      <h4>Scale Content Production</h4>
+      <ul>
+        <li>Scale blog output: increase to 6-8 posts per month using AI-assisted content workflows</li>
+        <li>Build out remaining content clusters for electrical, mechanical, and lighting services</li>
+        <li>Create location pages for additional emirates if market demand supports it</li>
+        <li>Publish service comparison pages targeting commercial decision-makers</li>
+        <li>GBP: aim for 75+ reviews, test GBP offers/promotions feature</li>
+      </ul>
+    </div>
+    <div class="month-card q4">
+      <div class="month-label">Month 11 / April 2027</div>
+      <h4>Consolidate + Prune</h4>
+      <ul>
+        <li>Content audit: identify and consolidate thin or duplicate content</li>
+        <li>Merge underperforming blog posts into stronger, comprehensive pieces</li>
+        <li>Refresh top 10 performing pages with updated data and expanded content</li>
+        <li>Build internal link equity maps to push authority to highest-value pages</li>
+        <li>Continue backlink acquisition with focus on high-authority domains</li>
+      </ul>
+    </div>
+    <div class="month-card q4">
+      <div class="month-label">Month 12 / May 2027</div>
+      <h4>Annual Review + Year 2 Planning</h4>
+      <ul>
+        <li>Comprehensive 12-month performance report: traffic, rankings, leads, revenue attribution</li>
+        <li>GBP performance review: impressions, clicks, calls, direction requests, review volume</li>
+        <li>Identify top 10 performing pages and plan Year 2 content expansion around them</li>
+        <li>Develop Year 2 strategy: new markets, deeper content, expanded service areas</li>
+        <li>Set Year 2 KPIs based on Year 1 benchmarks and actual conversion data</li>
+      </ul>
+    </div>
+  </div>
+
+  <div style="margin-top: 32px; padding: 24px; background: var(--surface); border: 1px solid var(--border); border-radius: 12px;">
+    <h4 style="font-family: var(--font-display); margin-bottom: 12px; font-size: 1rem;">Google Business Profile: Why It Matters</h4>
+    <p style="font-size: .82rem; color: var(--text-dim); line-height: 1.7;">For service-based businesses in the UAE, GBP is arguably more important than organic rankings in the short term. The Google Local Pack (map results) appears above organic results for most service queries like "plumbing services Dubai" or "HVAC repair near me." A fully optimised GBP with 50+ reviews, weekly posts, and complete service listings can generate qualified leads within weeks of launch, while organic SEO builds momentum over months. This is why GBP setup is part of the website launch phase, not an afterthought.</p>
+  </div>
+</div>
+
+<!-- TAB 6: PAID MEDIA -->
+<div class="section" id="paidmedia">
+  <div class="section-header">
+    <h2>12-Month Paid Media Roadmap</h2>
+    <p>Google Ads and Meta (Facebook/Instagram) strategy starting June 2026 after the website goes live in May. All campaigns point to the new landing pages built during the website phase.</p>
+  </div>
+
+  <div class="kpi-row">
+    <div class="kpi-box">
+      <div class="kpi-value">2</div>
+      <div class="kpi-label">Platforms</div>
+    </div>
+    <div class="kpi-box">
+      <div class="kpi-value">8+</div>
+      <div class="kpi-label">Campaign Types</div>
+    </div>
+    <div class="kpi-box">
+      <div class="kpi-value">30%</div>
+      <div class="kpi-label">CPA Reduction Goal</div>
+    </div>
+    <div class="kpi-box">
+      <div class="kpi-value">5-8x</div>
+      <div class="kpi-label">Target ROAS</div>
+    </div>
+  </div>
+
+  <!-- PRE-LAUNCH -->
+  <div class="quarter-header">
+    <span class="quarter-badge q1">PRE-LAUNCH</span>
+    <h3>Account Setup (March - May 2026)</h3>
+  </div>
+  <div class="month-grid">
+    <div class="month-card q1">
+      <div class="month-label"><span class="channel-badge google">Google Ads</span> Pre-Launch</div>
+      <h4>Account and Tracking Setup</h4>
+      <ul>
+        <li>Set up Google Ads account with proper structure (campaigns per service category)</li>
+        <li>Implement conversion tracking: phone calls, form submissions, email clicks</li>
+        <li>Set up call tracking with dynamic number insertion on the new website</li>
+        <li>Build negative keyword lists to eliminate waste from day one (DIY, jobs, salary, free, courses)</li>
+        <li>Research competitor ads: identify their keywords, messaging, and landing pages</li>
+        <li>Prepare ad copy and extensions (callouts, sitelinks, structured snippets) ready for launch</li>
+      </ul>
+    </div>
+    <div class="month-card q1">
+      <div class="month-label"><span class="channel-badge meta">Meta Ads</span> Pre-Launch</div>
+      <h4>Pixel and Creative Preparation</h4>
+      <ul>
+        <li>Set up Meta Business Manager with proper Pixel and Conversions API on the new website</li>
+        <li>Build custom audiences ready: website visitors, page engagers, video viewers</li>
+        <li>Prepare creative assets: project photos, before/after images, team shots, service videos</li>
+        <li>Define audience targeting segments: property managers, hotel operators, building developers, real estate investors in UAE</li>
+        <li>Design lead gen form templates with qualifying questions</li>
+        <li>Create carousel and video ad templates ready for launch</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- Q1 POST LAUNCH -->
+  <div class="quarter-header">
+    <span class="quarter-badge q1">Q1</span>
+    <h3>Launch, Test + Learn (June - August 2026)</h3>
+  </div>
+  <div class="month-grid">
+    <div class="month-card q1">
+      <div class="month-label"><span class="channel-badge google">Google Ads</span> Month 1 / June</div>
+      <h4>Search Campaign Launch</h4>
+      <ul>
+        <li>Launch Search campaigns for high-intent keywords: "plumbing services Dubai", "HVAC repair Sharjah", "electrical contractor UAE"</li>
+        <li>Point all ads to the new dedicated landing pages (from Landing Pages tab)</li>
+        <li>Start with Manual CPC bidding to gather conversion data before automating</li>
+        <li>Launch separate campaigns per service: Plumbing, HVAC, Electrical, Automation, AMC</li>
+        <li>Set up ad schedule based on business hours and peak enquiry times</li>
+        <li>Budget: test phase with moderate spend split across 4-5 service campaigns</li>
+      </ul>
+    </div>
+    <div class="month-card q1">
+      <div class="month-label"><span class="channel-badge meta">Meta Ads</span> Month 1 / June</div>
+      <h4>Awareness + Lead Gen Launch</h4>
+      <ul>
+        <li>Launch Brand Awareness campaign showcasing completed projects (carousel + video)</li>
+        <li>Create Lead Gen campaign for AMC services targeting property managers and building owners</li>
+        <li>Audience targeting: UAE facility managers, property developers, hotel operators, real estate professionals</li>
+        <li>Test placements: Facebook Feed, Instagram Feed, Instagram Stories, Reels</li>
+        <li>Budget split: 60% awareness / 40% lead generation</li>
+        <li>Track CPM, CTR, and Cost Per Lead (CPL) as initial benchmarks</li>
+      </ul>
+    </div>
+    <div class="month-card q1">
+      <div class="month-label"><span class="channel-badge google">Google Ads</span> Month 2-3 / Jul-Aug</div>
+      <h4>Expand + Optimise</h4>
+      <ul>
+        <li>Analyse Month 1 data: identify top-converting keywords, ads, and audiences</li>
+        <li>Launch separate campaigns for Automation services (smart home, GRMS, lighting control)</li>
+        <li>Add Display remarketing campaigns targeting website visitors who did not convert</li>
+        <li>Test Performance Max campaigns with asset groups per service category</li>
+        <li>A/B test ad copy across all campaigns</li>
+        <li>Shift top-performing campaigns from Manual CPC to Target CPA once data is sufficient (30+ conversions)</li>
+      </ul>
+    </div>
+    <div class="month-card q1">
+      <div class="month-label"><span class="channel-badge meta">Meta Ads</span> Month 2-3 / Jul-Aug</div>
+      <h4>Retargeting + Audience Testing</h4>
+      <ul>
+        <li>Launch retargeting campaigns: website visitors, form abandoners, video viewers (50%+)</li>
+        <li>Test Lookalike audiences based on website converters and customer email lists</li>
+        <li>Create industry-specific ad sets: hospitality, commercial, residential</li>
+        <li>Test creative formats: before/after project images, client testimonials, service explainers</li>
+        <li>Launch Instagram-specific placements with visual project showcases</li>
+        <li>Reallocate budget based on CPL performance toward best-performing audiences</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- Q2 -->
+  <div class="quarter-header">
+    <span class="quarter-badge q2">Q2</span>
+    <h3>Scale Winners (September - November 2026)</h3>
+  </div>
+  <div class="month-grid">
+    <div class="month-card q2">
+      <div class="month-label"><span class="channel-badge google">Google Ads</span> Month 4-6</div>
+      <h4>Scale + Specialise</h4>
+      <ul>
+        <li>Scale budget on top-performing campaigns (expected: plumbing, HVAC, AMC)</li>
+        <li>Launch campaigns for industry verticals: "hotel HVAC maintenance Dubai", "commercial plumbing UAE"</li>
+        <li>Add YouTube video ads targeting facility management and property management audiences</li>
+        <li>Implement offline conversion tracking: connect CRM data to Google Ads for ROAS measurement</li>
+        <li>Monthly: negative keyword refinement, search term audits, quality score improvements</li>
+        <li>Test dayparting and geographic bid adjustments (Dubai vs Sharjah vs Abu Dhabi performance)</li>
+      </ul>
+    </div>
+    <div class="month-card q2">
+      <div class="month-label"><span class="channel-badge meta">Meta Ads</span> Month 4-6</div>
+      <h4>Full-Funnel + Seasonal Push</h4>
+      <ul>
+        <li>Implement full-funnel strategy: Awareness > Consideration > Conversion > Retention</li>
+        <li>Launch Advantage+ campaigns for lead generation with broader targeting</li>
+        <li>Create seasonal HVAC campaign (high demand in UAE during summer months)</li>
+        <li>Test Messenger click-to-chat ads for direct enquiries (Messenger works in UAE)</li>
+        <li>Build UGC-style content: "day in the life of a Dyntek technician"</li>
+        <li>Add qualifying questions to lead forms to improve lead quality and reduce wasted follow-ups</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- Q3 -->
+  <div class="quarter-header">
+    <span class="quarter-badge q3">Q3</span>
+    <h3>Advanced Targeting (December 2026 - February 2027)</h3>
+  </div>
+  <div class="month-grid">
+    <div class="month-card q3">
+      <div class="month-label"><span class="channel-badge google">Google Ads</span> Month 7-9</div>
+      <h4>Advanced Strategies</h4>
+      <ul>
+        <li>Launch competitor targeting campaigns: bid on competitor brand names (where legally permissible)</li>
+        <li>Expand to Google Demand Gen campaigns with service feeds</li>
+        <li>Create seasonal ad schedules: increase bids during peak facility management enquiry periods</li>
+        <li>Launch AMC-specific campaign targeting contract renewal season</li>
+        <li>Implement value-based bidding if CRM integration allows revenue tracking</li>
+        <li>A/B test landing page variations for top 3 highest-spend campaigns</li>
+      </ul>
+    </div>
+    <div class="month-card q3">
+      <div class="month-label"><span class="channel-badge meta">Meta Ads</span> Month 7-9</div>
+      <h4>Content-Led + Remarketing Depth</h4>
+      <ul>
+        <li>Test LinkedIn campaigns targeting corporate facility managers and procurement teams (test budget)</li>
+        <li>Create "social proof" campaign series featuring completed projects and testimonials</li>
+        <li>Deep remarketing: segment by service interest (plumbing visitors vs automation visitors)</li>
+        <li>Upload customer email list for retention and upsell campaigns</li>
+        <li>Test dynamic creative optimisation for automatic ad element combinations</li>
+        <li>Prepare Q4 campaign assets for Ramadan/Eid periods and year-end AMC renewals</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- Q4 -->
+  <div class="quarter-header">
+    <span class="quarter-badge q4">Q4</span>
+    <h3>Maximise ROI + Year 2 Planning (March - May 2027)</h3>
+  </div>
+  <div class="month-grid">
+    <div class="month-card q4">
+      <div class="month-label"><span class="channel-badge google">Google Ads</span> Month 10-12</div>
+      <h4>Maximise + Refine</h4>
+      <ul>
+        <li>Aggressive budget scaling on campaigns with proven ROAS above target</li>
+        <li>Consolidate underperforming campaigns and reallocate budget to winners</li>
+        <li>Launch remarketing lists for search ads (RLSA) with higher bids for returning visitors</li>
+        <li>Year-end AMC push: special offer campaigns targeting leads who did not convert earlier</li>
+        <li>Full account audit: quality scores, impression share, auction insights, wasted spend analysis</li>
+        <li>Build Year 2 keyword expansion plan based on 12 months of search term data</li>
+      </ul>
+    </div>
+    <div class="month-card q4">
+      <div class="month-label"><span class="channel-badge meta">Meta Ads</span> Month 10-12</div>
+      <h4>Retention, Upsell + Year 2 Planning</h4>
+      <ul>
+        <li>Launch customer retention campaigns: AMC renewal reminders, service upgrade offers</li>
+        <li>Create referral campaigns to incentivise existing clients to refer via Meta ads</li>
+        <li>Year-end brand campaign: "2027 with Dyntek" positioning for new year budgets</li>
+        <li>Full cross-channel attribution analysis: Google vs Meta contribution to pipeline</li>
+        <li>Develop Year 2 media plan with recommended budget allocation based on 12-month learnings</li>
+        <li>Set Year 2 KPIs: target CPA, ROAS, lead volume, and revenue targets per channel</li>
+      </ul>
+    </div>
+  </div>
+
+  <div style="margin-top: 32px; padding: 24px; background: var(--surface); border: 1px solid var(--border); border-radius: 12px;">
+    <h4 style="font-family: var(--font-display); margin-bottom: 12px; font-size: 1rem;">Budget Allocation Recommendation</h4>
+    <p style="font-size: .82rem; color: var(--text-dim); line-height: 1.7;">For the UAE facility management market, we recommend starting with a 65/35 split: 65% Google Ads (high-intent search traffic converts fastest in the services sector) and 35% Meta (awareness, remarketing, and visual storytelling). As the Meta audience matures and remarketing pools grow, this should shift toward 55/45 by Q3. AMC campaigns should receive dedicated budget as they represent recurring revenue with the highest customer lifetime value. Expect Month 1-2 CPAs to be higher as algorithms learn, with steady CPA reduction from Month 3 onwards. Note: all lead capture should use phone calls, forms, and Messenger (not VoIP-dependent tools which are restricted in the UAE).</p>
   </div>
 </div>
 
@@ -737,19 +1340,19 @@
   </div>
   <div class="timeline">
     <div class="timeline-item">
-      <h4>Phase 1 — Foundation (Week 1–2) <span class="phase-tag">Quick Wins</span></h4>
+      <h4>Phase 1 - Foundation (Week 1-2) <span class="phase-tag">Quick Wins</span></h4>
       <p>Rename "MEP Services" to "Facility Management Services" in the navigation. Reorder dropdown items with Plumbing first. Update About & Contact URL slugs. Set up 301 redirects for all changed URLs. Update internal linking across all pages.</p>
     </div>
     <div class="timeline-item">
-      <h4>Phase 2 — New Pages (Week 2–4) <span class="phase-tag">Content Build</span></h4>
-      <p>Create the Facility Management hub page. Build Lighting Services and Mechanical Services pages. Create the Projects/Portfolio page (even with 3–5 projects to start). Rewrite existing service pages with updated SEO-focused copy and cleaner slugs.</p>
+      <h4>Phase 2 - New Pages (Week 2-4) <span class="phase-tag">Content Build</span></h4>
+      <p>Create the Facility Management hub page. Build Lighting Services and Mechanical Services pages. Create the Projects/Portfolio page (even with 3-5 projects to start). Rewrite existing service pages with updated SEO-focused copy and cleaner slugs.</p>
     </div>
     <div class="timeline-item">
-      <h4>Phase 3 — Industry Pages (Week 4–6) <span class="phase-tag">Revenue Pages</span></h4>
+      <h4>Phase 3 - Industry Pages (Week 4-6) <span class="phase-tag">Revenue Pages</span></h4>
       <p>Build Hospitality Solutions and Commercial Building Solutions landing pages. Reposition AMC as a standalone conversion page with service tiers. These become the primary PPC landing pages for Google Ads campaigns.</p>
     </div>
     <div class="timeline-item">
-      <h4>Phase 4 — Optimise & Scale (Week 6–8) <span class="phase-tag">Performance</span></h4>
+      <h4>Phase 4 - Optimise & Scale (Week 6-8) <span class="phase-tag">Performance</span></h4>
       <p>Launch Google Ads campaigns pointing to new landing pages. Set up conversion tracking and form analytics. Begin schema markup for local SEO (Service, LocalBusiness, FAQ). Build Residential/Villa page and Smart Building page. Begin content marketing with blog posts targeting long-tail keywords.</p>
     </div>
   </div>
