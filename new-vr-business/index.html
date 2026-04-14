@@ -4,23 +4,37 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>New VR Business — Strategic Brief</title>
-<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <style>
   :root {
-    --bg: #F5F7FF;
+    --bg: #F6F8FF;
     --white: #ffffff;
-    --surface: #ffffff;
-    --surface2: #EEF1FB;
-    --border: #E2E6F3;
-    --text: #1A1F36;
-    --muted: #6B7394;
-    --green: #0BB96A;
-    --green-light: #E8FAF2;
+    --border: #E0E5F2;
+    --text: #111827;
+    --muted: #6B7280;
+    --green: #059669;
+    --green-light: #ECFDF5;
     --purple: #7C3AED;
-    --purple-light: #F3EEFF;
-    --cyan: #0284C7;
+    --purple-light: #F5F3FF;
+    --cyan: #0369A1;
     --cyan-light: #E0F2FE;
+    --orange: #EA580C;
+    --orange-light: #FFF7ED;
+    --rose: #BE123C;
+    --rose-light: #FFF1F2;
     --accent: #4F46E5;
+    --accent-light: #EEF2FF;
+
+    /* Direction theme colors */
+    --fun-color: #D97706;
+    --fun-bg: #FFFBEB;
+    --fun-border: rgba(217,119,6,0.2);
+    --corp-color: #0F172A;
+    --corp-bg: #F8FAFC;
+    --corp-border: rgba(15,23,42,0.15);
+    --tech-color: #4F46E5;
+    --tech-bg: #EEF2FF;
+    --tech-border: rgba(79,70,229,0.2);
   }
 
   * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -28,87 +42,87 @@
   body {
     background: var(--bg);
     color: var(--text);
-    font-family: 'Plus Jakarta Sans', sans-serif;
-    font-size: 16px;
-    line-height: 1.7;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 15.5px;
+    line-height: 1.75;
     min-height: 100vh;
   }
 
   .wrap {
-    max-width: 860px;
+    max-width: 900px;
     margin: 0 auto;
-    padding: 60px 32px 100px;
+    padding: 64px 32px 100px;
   }
 
-  /* Header */
+  /* ── Header ── */
   .header {
-    margin-bottom: 56px;
-    animation: fadeUp 0.6s ease both;
+    margin-bottom: 52px;
+    animation: fadeUp 0.5s ease both;
   }
 
   .from-tag {
-    display: inline-block;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
     font-size: 11px;
-    font-weight: 700;
-    letter-spacing: 0.14em;
+    font-weight: 600;
+    letter-spacing: 0.12em;
     text-transform: uppercase;
     color: var(--accent);
-    background: rgba(79,70,229,0.08);
-    border: 1px solid rgba(79,70,229,0.18);
+    background: var(--accent-light);
+    border: 1px solid rgba(79,70,229,0.2);
     padding: 5px 14px;
     border-radius: 999px;
-    margin-bottom: 24px;
+    margin-bottom: 26px;
   }
 
   .header h1 {
-    font-family: 'Manrope', sans-serif;
-    font-size: clamp(30px, 5vw, 50px);
-    font-weight: 800;
-    line-height: 1.15;
-    letter-spacing: -0.03em;
+    font-family: 'Outfit', sans-serif;
+    font-size: clamp(30px, 4.5vw, 48px);
+    font-weight: 700;
+    line-height: 1.2;
     color: var(--text);
-    margin-bottom: 16px;
+    margin-bottom: 14px;
   }
 
   .header h1 span { color: var(--accent); }
 
   .header p {
     color: var(--muted);
-    font-size: 17px;
-    max-width: 560px;
+    font-size: 16px;
+    max-width: 540px;
     font-weight: 400;
   }
 
-  /* Context grid */
+  /* ── Context cards ── */
   .context-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 14px;
-    margin-bottom: 40px;
-    animation: fadeUp 0.6s 0.08s ease both;
+    gap: 12px;
+    margin-bottom: 44px;
+    animation: fadeUp 0.5s 0.07s ease both;
   }
 
   .context-card {
     background: var(--white);
     border: 1px solid var(--border);
-    border-radius: 14px;
-    padding: 20px 22px;
-    box-shadow: 0 1px 4px rgba(0,0,0,0.04);
+    border-radius: 12px;
+    padding: 18px 20px;
   }
 
   .context-card .label {
-    font-size: 11px;
+    font-size: 10.5px;
     letter-spacing: 0.1em;
     text-transform: uppercase;
     color: var(--muted);
-    margin-bottom: 6px;
+    margin-bottom: 5px;
     font-weight: 600;
   }
 
   .context-card .value {
-    font-family: 'Manrope', sans-serif;
+    font-family: 'Outfit', sans-serif;
     font-size: 14px;
-    font-weight: 700;
+    font-weight: 600;
     color: var(--text);
   }
 
@@ -118,15 +132,15 @@
   }
   .context-card .value a:hover { text-decoration: underline; }
 
-  /* Section titles */
+  /* ── Section titles ── */
   .section-title {
-    font-family: 'Manrope', sans-serif;
-    font-size: 12px;
-    font-weight: 800;
-    letter-spacing: 0.13em;
+    font-family: 'Outfit', sans-serif;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.14em;
     text-transform: uppercase;
     color: var(--purple);
-    margin-bottom: 22px;
+    margin-bottom: 20px;
     display: flex;
     align-items: center;
     gap: 12px;
@@ -139,63 +153,61 @@
     background: var(--border);
   }
 
-  /* Opportunity block */
+  /* ── Opportunity ── */
   .opportunity {
     background: var(--green-light);
-    border: 1px solid rgba(11,185,106,0.25);
+    border: 1px solid rgba(5,150,105,0.2);
     border-left: 4px solid var(--green);
-    border-radius: 12px;
-    padding: 24px 28px;
-    margin-bottom: 48px;
-    animation: fadeUp 0.6s 0.12s ease both;
+    border-radius: 10px;
+    padding: 22px 26px;
+    margin-bottom: 52px;
+    animation: fadeUp 0.5s 0.1s ease both;
   }
 
   .opportunity p {
-    font-size: 15.5px;
-    color: #1a3a2a;
-    font-weight: 400;
+    font-size: 15px;
+    color: #064e3b;
   }
 
   .opportunity strong {
-    color: #037a45;
-    font-weight: 700;
+    color: #047857;
+    font-weight: 600;
   }
 
-  /* Concept cards */
+  /* ── Concept cards ── */
   .concepts {
     display: flex;
     flex-direction: column;
-    gap: 18px;
-    margin-bottom: 52px;
-    animation: fadeUp 0.6s 0.16s ease both;
+    gap: 16px;
+    margin-bottom: 56px;
+    animation: fadeUp 0.5s 0.14s ease both;
   }
 
   .concept-card {
     background: var(--white);
     border: 1px solid var(--border);
-    border-radius: 16px;
+    border-radius: 14px;
     overflow: hidden;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.04);
     transition: box-shadow 0.2s, transform 0.2s;
   }
 
   .concept-card:hover {
-    box-shadow: 0 6px 24px rgba(0,0,0,0.08);
+    box-shadow: 0 6px 24px rgba(0,0,0,0.07);
     transform: translateY(-2px);
   }
 
   .concept-header {
     display: flex;
     align-items: flex-start;
-    gap: 18px;
-    padding: 22px 26px;
+    gap: 16px;
+    padding: 20px 24px;
     border-bottom: 1px solid var(--border);
   }
 
   .concept-icon {
-    width: 46px;
-    height: 46px;
-    border-radius: 12px;
+    width: 44px;
+    height: 44px;
+    border-radius: 10px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -203,43 +215,42 @@
     flex-shrink: 0;
   }
 
-  .concept-icon.green { background: var(--green-light); }
+  .concept-icon.green  { background: var(--green-light); }
   .concept-icon.purple { background: var(--purple-light); }
-  .concept-icon.cyan { background: var(--cyan-light); }
+  .concept-icon.cyan   { background: var(--cyan-light); }
 
   .concept-title-block h3 {
-    font-family: 'Manrope', sans-serif;
-    font-size: 17px;
-    font-weight: 800;
+    font-family: 'Outfit', sans-serif;
+    font-size: 16px;
+    font-weight: 700;
     color: var(--text);
-    margin-bottom: 3px;
-    letter-spacing: -0.01em;
+    margin-bottom: 2px;
   }
 
   .concept-title-block .tagline {
-    font-size: 13.5px;
+    font-size: 13px;
     color: var(--muted);
     font-style: italic;
-    font-weight: 400;
   }
 
   .concept-badge {
     margin-left: auto;
-    font-size: 11px;
+    font-size: 10.5px;
     font-weight: 700;
     letter-spacing: 0.08em;
     text-transform: uppercase;
-    padding: 4px 12px;
+    padding: 4px 11px;
     border-radius: 999px;
     flex-shrink: 0;
+    align-self: flex-start;
   }
 
-  .badge-green { background: var(--green-light); color: #037a45; border: 1px solid rgba(11,185,106,0.3); }
-  .badge-purple { background: var(--purple-light); color: var(--purple); border: 1px solid rgba(124,58,237,0.25); }
-  .badge-cyan { background: var(--cyan-light); color: var(--cyan); border: 1px solid rgba(2,132,199,0.25); }
+  .badge-green  { background: var(--green-light);  color: var(--green);  border: 1px solid rgba(5,150,105,0.25); }
+  .badge-purple { background: var(--purple-light); color: var(--purple); border: 1px solid rgba(124,58,237,0.2); }
+  .badge-cyan   { background: var(--cyan-light);   color: var(--cyan);   border: 1px solid rgba(3,105,161,0.2); }
 
   .concept-body {
-    padding: 22px 26px;
+    padding: 20px 24px;
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 24px;
@@ -247,18 +258,17 @@
   }
 
   .concept-body .col-label {
-    font-size: 11px;
+    font-size: 10.5px;
     letter-spacing: 0.1em;
     text-transform: uppercase;
     color: var(--muted);
-    font-weight: 700;
-    margin-bottom: 10px;
+    font-weight: 600;
+    margin-bottom: 8px;
   }
 
   .concept-body p {
-    font-size: 14px;
-    color: #3d4466;
-    font-weight: 400;
+    font-size: 13.5px;
+    color: #374151;
     line-height: 1.65;
   }
 
@@ -266,14 +276,13 @@
     list-style: none;
     display: flex;
     flex-direction: column;
-    gap: 7px;
+    gap: 6px;
   }
 
   .concept-body ul li {
-    font-size: 14px;
-    color: #3d4466;
-    font-weight: 400;
-    padding-left: 18px;
+    font-size: 13.5px;
+    color: #374151;
+    padding-left: 16px;
     position: relative;
     line-height: 1.5;
   }
@@ -283,145 +292,214 @@
     position: absolute;
     left: 0;
     color: var(--green);
-    font-size: 12px;
-    top: 2px;
-  }
-
-  /* Name suggestions */
-  .names-section {
-    margin-bottom: 52px;
-    animation: fadeUp 0.6s 0.2s ease both;
-  }
-
-  .names-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    gap: 14px;
-  }
-
-  .name-card {
-    background: var(--white);
-    border: 1px solid var(--border);
-    border-radius: 14px;
-    padding: 20px;
-    transition: all 0.2s;
-    position: relative;
-    overflow: hidden;
-    box-shadow: 0 1px 4px rgba(0,0,0,0.04);
-  }
-
-  .name-card::after {
-    content: '';
-    position: absolute;
-    bottom: 0; left: 0; right: 0;
-    height: 3px;
-    border-radius: 0 0 14px 14px;
-  }
-
-  .name-card.g::after { background: var(--green); }
-  .name-card.p::after { background: var(--purple); }
-  .name-card.c::after { background: var(--cyan); }
-
-  .name-card:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 8px 24px rgba(0,0,0,0.08);
-  }
-
-  .name-card .name {
-    font-family: 'Manrope', sans-serif;
-    font-size: 17px;
-    font-weight: 800;
-    color: var(--text);
-    margin-bottom: 4px;
-    letter-spacing: -0.02em;
-  }
-
-  .name-card .url {
     font-size: 11px;
-    color: var(--muted);
-    font-family: monospace;
-    margin-bottom: 10px;
-    letter-spacing: 0.02em;
+    top: 3px;
   }
 
-  .name-card .note {
-    font-size: 13px;
-    color: #5a6080;
+  /* ══════════════════════════════════════
+     NAMES SECTION — direction groups
+  ══════════════════════════════════════ */
+  .names-section {
+    margin-bottom: 56px;
+    animation: fadeUp 0.5s 0.18s ease both;
+  }
+
+  /* Direction group header */
+  .direction-group {
+    margin-bottom: 36px;
+  }
+
+  .direction-header {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    margin-bottom: 16px;
+    padding: 14px 18px;
+    border-radius: 10px;
+    border: 1px solid;
+  }
+
+  .direction-header.fun  { background: var(--fun-bg);  border-color: var(--fun-border); }
+  .direction-header.corp { background: var(--corp-bg); border-color: var(--corp-border); }
+  .direction-header.tech { background: var(--tech-bg); border-color: var(--tech-border); }
+  .direction-header.prev { background: #F9FAFB;        border-color: var(--border); }
+
+  .direction-icon {
+    font-size: 22px;
+    flex-shrink: 0;
+  }
+
+  .direction-label {
+    font-family: 'Outfit', sans-serif;
+    font-size: 15px;
+    font-weight: 700;
+    color: var(--text);
+  }
+
+  .direction-label small {
+    display: block;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 12.5px;
     font-weight: 400;
-    line-height: 1.55;
-    padding-bottom: 14px;
+    color: var(--muted);
+    margin-top: 1px;
   }
 
-  .name-card .fit-tag {
-    display: inline-block;
-    margin-top: 10px;
+  .direction-pill {
+    margin-left: auto;
     font-size: 10px;
     font-weight: 700;
     letter-spacing: 0.1em;
     text-transform: uppercase;
     padding: 3px 10px;
     border-radius: 999px;
+    flex-shrink: 0;
   }
 
-  .g .fit-tag { background: var(--green-light); color: #037a45; }
-  .p .fit-tag { background: var(--purple-light); color: var(--purple); }
-  .c .fit-tag { background: var(--cyan-light); color: var(--cyan); }
+  .fun  .direction-pill { background: var(--fun-color);  color: #fff; }
+  .corp .direction-pill { background: var(--corp-color); color: #fff; }
+  .tech .direction-pill { background: var(--tech-color); color: #fff; }
+  .prev .direction-pill { background: var(--muted);      color: #fff; }
 
-  /* Recommended path */
+  .names-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 12px;
+  }
+
+  /* Name cards */
+  .name-card {
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 18px 18px 16px;
+    transition: all 0.2s;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .name-card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 3px;
+    border-radius: 12px 12px 0 0;
+  }
+
+  /* colour themes for accent stripe */
+  .name-card.fun-card::before  { background: var(--fun-color); }
+  .name-card.corp-card::before { background: var(--corp-color); }
+  .name-card.tech-card::before { background: var(--tech-color); }
+  .name-card.prev-card::before { background: var(--muted); }
+
+  .name-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 24px rgba(0,0,0,0.08);
+    border-color: #c9d0e8;
+  }
+
+  .new-badge {
+    position: absolute;
+    top: 14px;
+    right: 14px;
+    font-size: 9px;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    background: var(--accent);
+    color: #fff;
+    padding: 2px 7px;
+    border-radius: 4px;
+  }
+
+  .name-card .name {
+    font-family: 'Outfit', sans-serif;
+    font-size: 17px;
+    font-weight: 700;
+    color: var(--text);
+    margin-bottom: 3px;
+    margin-top: 10px;
+  }
+
+  .name-card .url {
+    font-size: 11px;
+    color: var(--muted);
+    font-family: monospace;
+    margin-bottom: 8px;
+  }
+
+  .name-card .note {
+    font-size: 12.5px;
+    color: #6B7280;
+    line-height: 1.55;
+    padding-bottom: 10px;
+  }
+
+  .name-card .fit-tag {
+    display: inline-block;
+    margin-top: 6px;
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    padding: 3px 9px;
+    border-radius: 999px;
+  }
+
+  .fun-card  .fit-tag { background: var(--fun-bg);  color: var(--fun-color);  border: 1px solid var(--fun-border); }
+  .corp-card .fit-tag { background: var(--corp-bg); color: #334155;           border: 1px solid var(--corp-border); }
+  .tech-card .fit-tag { background: var(--tech-bg); color: var(--tech-color); border: 1px solid var(--tech-border); }
+  .prev-card .fit-tag { background: #F3F4F6;        color: var(--muted);      border: 1px solid var(--border); }
+
+  /* ── Recommended ── */
   .recommended {
     background: var(--white);
     border: 1px solid var(--border);
     border-top: 4px solid var(--accent);
-    border-radius: 16px;
-    padding: 30px;
+    border-radius: 14px;
+    padding: 28px 30px;
     margin-bottom: 40px;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.04);
-    animation: fadeUp 0.6s 0.24s ease both;
+    animation: fadeUp 0.5s 0.22s ease both;
   }
 
   .recommended h3 {
-    font-family: 'Manrope', sans-serif;
-    font-size: 18px;
-    font-weight: 800;
+    font-family: 'Outfit', sans-serif;
+    font-size: 17px;
+    font-weight: 700;
     color: var(--text);
-    margin-bottom: 10px;
-    letter-spacing: -0.02em;
+    margin-bottom: 8px;
   }
 
   .recommended > p {
-    font-size: 15px;
+    font-size: 14.5px;
     color: var(--muted);
-    font-weight: 400;
-    margin-bottom: 24px;
+    margin-bottom: 22px;
+    line-height: 1.65;
   }
 
-  .recommended strong { color: var(--accent); font-weight: 700; }
+  .recommended strong { color: var(--accent); font-weight: 600; }
 
-  .steps {
-    display: flex;
-    flex-direction: column;
-    gap: 12px;
-  }
+  .steps { display: flex; flex-direction: column; gap: 10px; }
 
   .step {
     display: flex;
     align-items: flex-start;
     gap: 14px;
-    padding: 16px 18px;
+    padding: 14px 16px;
     background: var(--bg);
     border-radius: 10px;
     border: 1px solid var(--border);
   }
 
   .step-num {
-    width: 28px;
-    height: 28px;
+    width: 26px;
+    height: 26px;
     border-radius: 50%;
     background: var(--accent);
     color: #fff;
-    font-family: 'Manrope', sans-serif;
+    font-family: 'Outfit', sans-serif;
     font-size: 13px;
-    font-weight: 800;
+    font-weight: 700;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -429,44 +507,35 @@
     margin-top: 1px;
   }
 
-  .step p {
-    margin: 0;
-    font-size: 14.5px;
-    color: #3d4466;
-  }
+  .step p { margin: 0; font-size: 14px; color: #374151; }
+  .step p strong { color: var(--text); font-weight: 600; }
 
-  .step p strong { color: var(--text); font-weight: 700; }
-
-  /* Footer note */
+  /* ── Footer note ── */
   .footer-note {
     background: var(--purple-light);
-    border: 1px solid rgba(124,58,237,0.2);
-    border-radius: 12px;
-    padding: 20px 24px;
-    font-size: 14.5px;
-    color: #3d2070;
-    font-weight: 400;
-    animation: fadeUp 0.6s 0.28s ease both;
+    border: 1px solid rgba(124,58,237,0.18);
+    border-radius: 10px;
+    padding: 18px 22px;
+    font-size: 14px;
+    color: #4c1d95;
+    animation: fadeUp 0.5s 0.26s ease both;
     line-height: 1.65;
   }
 
-  .footer-note strong {
-    color: var(--purple);
-    font-weight: 700;
-  }
+  .footer-note strong { color: var(--purple); font-weight: 600; }
 
   @keyframes fadeUp {
-    from { opacity: 0; transform: translateY(18px); }
-    to { opacity: 1; transform: translateY(0); }
+    from { opacity: 0; transform: translateY(16px); }
+    to   { opacity: 1; transform: translateY(0); }
   }
 
-  @media (max-width: 640px) {
+  @media (max-width: 660px) {
     .context-grid { grid-template-columns: 1fr; }
     .concept-body { grid-template-columns: 1fr; }
-    .names-grid { grid-template-columns: 1fr 1fr; }
+    .names-grid   { grid-template-columns: 1fr 1fr; }
     .concept-header { flex-wrap: wrap; }
     .concept-badge { margin-left: 0; }
-    .wrap { padding: 40px 20px 80px; }
+    .wrap { padding: 40px 18px 80px; }
   }
 </style>
 </head>
@@ -476,7 +545,7 @@
   <!-- Header -->
   <div class="header">
     <span class="from-tag">Prepared by Next Wave</span>
-    <h1>New VR Business <span>Strategy Brief</span></h1>
+    <h1>New VR Business<br><span>Strategy Brief</span></h1>
     <p>Business concepts, brand name ideas, and a recommended path forward for your independent VR venture in Toronto.</p>
   </div>
 
@@ -507,10 +576,8 @@
 
   <!-- Business Concepts -->
   <div class="section-title">3 Business Concepts to Consider</div>
-
   <div class="concepts">
 
-    <!-- Concept 1 -->
     <div class="concept-card">
       <div class="concept-header">
         <div class="concept-icon green">🎮</div>
@@ -537,7 +604,6 @@
       </div>
     </div>
 
-    <!-- Concept 2 -->
     <div class="concept-card">
       <div class="concept-header">
         <div class="concept-icon purple">🎓</div>
@@ -564,7 +630,6 @@
       </div>
     </div>
 
-    <!-- Concept 3 -->
     <div class="concept-card">
       <div class="concept-header">
         <div class="concept-icon cyan">🏢</div>
@@ -593,68 +658,160 @@
 
   </div>
 
-  <!-- Name Suggestions -->
+  <!-- ══ NAMES ══ -->
   <div class="names-section">
     <div class="section-title">Brand Name Ideas</div>
-    <div class="names-grid">
 
-      <div class="name-card g">
-        <div class="name">VR Party Lab</div>
-        <div class="url">vrpartylab.com</div>
-        <div class="note">Warm, friendly, signals "experiments" and fun. Perfect for the edutainment dual-angle.</div>
-        <span class="fit-tag">B2C + Education</span>
+    <!-- ① Fun & Family -->
+    <div class="direction-group">
+      <div class="direction-header fun">
+        <div class="direction-icon">🎉</div>
+        <div class="direction-label">
+          Fun &amp; Family-Friendly
+          <small>Great for birthday parties, kids' events, and community bookings</small>
+        </div>
+        <span class="direction-pill">B2C</span>
       </div>
+      <div class="names-grid">
 
-      <div class="name-card p">
-        <div class="name">Quantum Play</div>
-        <div class="url">quantumplay.ca</div>
-        <div class="note">Bridges the gap between "science/education" and "entertainment" without being too niche.</div>
-        <span class="fit-tag">All-rounder</span>
+        <div class="name-card fun-card">
+          <span class="new-badge">New</span>
+          <div class="name">Warp Zone TO</div>
+          <div class="url">warpzone.ca</div>
+          <div class="note">A gaming culture classic. Kids and parents both get the reference immediately — energetic and totally ownable in Toronto.</div>
+          <span class="fit-tag">Birthday · Kids</span>
+        </div>
+
+        <div class="name-card fun-card">
+          <span class="new-badge">New</span>
+          <div class="name">Launchpad VR</div>
+          <div class="url">launchpadvr.ca</div>
+          <div class="note">Feels like the start of an adventure. Perfect for birthday parties — an experience you "launch into," not just attend.</div>
+          <span class="fit-tag">Birthday · Events</span>
+        </div>
+
+        <div class="name-card prev-card">
+          <div class="name">VR Party Lab</div>
+          <div class="url">vrpartylab.com</div>
+          <div class="note">Warm, friendly, and descriptive. Signals fun experiments — parents understand it instantly.</div>
+          <span class="fit-tag">Birthday · Edu</span>
+        </div>
+
       </div>
-
-      <div class="name-card c">
-        <div class="name">Apex VR Toronto</div>
-        <div class="url">apexvr.ca</div>
-        <div class="note">Strong B2B appeal. "Apex" signals top-tier hardware and premium positioning.</div>
-        <span class="fit-tag">Corporate</span>
-      </div>
-
-      <div class="name-card g">
-        <div class="name">Immersify</div>
-        <div class="url">immersify.ca</div>
-        <div class="note">Modern, verb-based brand. Easy to say, unique, works for both parties and schools.</div>
-        <span class="fit-tag">B2C + B2B</span>
-      </div>
-
-      <div class="name-card p">
-        <div class="name">Portal VR Events</div>
-        <div class="url">portalvrevents.ca</div>
-        <div class="note">Evokes "entering another world" — familiar VR metaphor without competing with the Another World brand.</div>
-        <span class="fit-tag">Events Focus</span>
-      </div>
-
-      <div class="name-card c">
-        <div class="name">VR Academy TO</div>
-        <div class="url">vracademy.ca</div>
-        <div class="note">Positions the brand squarely in the education space. Clean and professional for school board pitches.</div>
-        <span class="fit-tag">Education</span>
-      </div>
-
     </div>
+
+    <!-- ② Premium Corporate -->
+    <div class="direction-group">
+      <div class="direction-header corp">
+        <div class="direction-icon">🏢</div>
+        <div class="direction-label">
+          Premium &amp; Corporate
+          <small>Built for event planners, trade shows, and B2B activations</small>
+        </div>
+        <span class="direction-pill">B2B</span>
+      </div>
+      <div class="names-grid">
+
+        <div class="name-card corp-card">
+          <span class="new-badge">New</span>
+          <div class="name">Axiom VR</div>
+          <div class="url">axiomvr.ca</div>
+          <div class="note">Authoritative and clean. Signals expertise and trust — exactly what corporate event planners look for in a vendor.</div>
+          <span class="fit-tag">Corporate · Trade Shows</span>
+        </div>
+
+        <div class="name-card corp-card">
+          <span class="new-badge">New</span>
+          <div class="name">Prestige Immersive</div>
+          <div class="url">prestigeimmersive.ca</div>
+          <div class="note">Luxury-forward positioning. Communicates high-end equipment and white-glove service without saying a word about VR.</div>
+          <span class="fit-tag">Corporate · Premium</span>
+        </div>
+
+        <div class="name-card prev-card">
+          <div class="name">Apex VR Toronto</div>
+          <div class="url">apexvr.ca</div>
+          <div class="note">Strong B2B appeal. "Apex" signals top-tier hardware and a premium, results-driven experience.</div>
+          <span class="fit-tag">Corporate · B2B</span>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- ③ Tech-Forward -->
+    <div class="direction-group">
+      <div class="direction-header tech">
+        <div class="direction-icon">⚡</div>
+        <div class="direction-label">
+          Tech-Forward &amp; Modern
+          <small>Works across both audiences — versatile, future-proof branding</small>
+        </div>
+        <span class="direction-pill">Both</span>
+      </div>
+      <div class="names-grid">
+
+        <div class="name-card tech-card">
+          <span class="new-badge">New</span>
+          <div class="name">Voxel</div>
+          <div class="url">voxel.ca</div>
+          <div class="note">Short, punchy, rooted in 3D tech culture. Extremely easy to brand — works on a t-shirt, a simulator wrap, or a business card.</div>
+          <span class="fit-tag">All-rounder</span>
+        </div>
+
+        <div class="name-card tech-card">
+          <span class="new-badge">New</span>
+          <div class="name">Vivid Labs</div>
+          <div class="url">vividlabs.ca</div>
+          <div class="note">Merges the "lab" credibility that schools love with a vibrant, experience-led word that resonates with event clients.</div>
+          <span class="fit-tag">Edu + Events</span>
+        </div>
+
+        <div class="name-card tech-card">
+          <span class="new-badge">New</span>
+          <div class="name">Gridspace</div>
+          <div class="url">gridspace.ca</div>
+          <div class="note">Sleek and modern with an architectural feel. Appeals to tech-savvy corporates and positions the brand as a serious player.</div>
+          <span class="fit-tag">Corporate · Tech</span>
+        </div>
+
+        <div class="name-card prev-card">
+          <div class="name">Immersify</div>
+          <div class="url">immersify.ca</div>
+          <div class="note">Verb-based and modern. Easy to say, unique, and flexible enough for both parties and schools.</div>
+          <span class="fit-tag">All-rounder</span>
+        </div>
+
+        <div class="name-card prev-card">
+          <div class="name">Quantum Play</div>
+          <div class="url">quantumplay.ca</div>
+          <div class="note">Bridges science and entertainment — works across education and consumer audiences without being too niche.</div>
+          <span class="fit-tag">Edu + B2C</span>
+        </div>
+
+        <div class="name-card prev-card">
+          <div class="name">Portal VR Events</div>
+          <div class="url">portalvrevents.ca</div>
+          <div class="note">Familiar VR metaphor of "entering another world" — distinct from the Another World brand while carrying the same magic.</div>
+          <span class="fit-tag">Events</span>
+        </div>
+
+      </div>
+    </div>
+
   </div>
 
   <!-- Recommended Path -->
   <div class="recommended">
     <h3>Our Recommended Starting Point</h3>
-    <p>Based on your existing experience operating the Another World franchise, we recommend starting with <strong>Concept 1 — The Full Hybrid</strong>, trading as <strong>"VR Party Lab"</strong> or <strong>"Immersify"</strong>. Here's a practical launch sequence:</p>
+    <p>Based on your existing franchise experience, we recommend <strong>Concept 1 — The Full Hybrid</strong>. For naming, our top picks across the three directions are <strong>Vivid Labs</strong> (tech + education + events), <strong>Launchpad VR</strong> (fun and family), and <strong>Axiom VR</strong> (corporate B2B). Here's the practical launch path:</p>
     <div class="steps">
       <div class="step">
         <div class="step-num">1</div>
-        <p><strong>Months 0–2:</strong> Register the business, secure the domain, and acquire your first piece of independent hardware (a VR gaming booth or motion racing simulator). Don't rely on the franchise assets.</p>
+        <p><strong>Months 0–2:</strong> Register the business, secure the domain, and acquire your first piece of independent hardware. Don't rely on the franchise assets.</p>
       </div>
       <div class="step">
         <div class="step-num">2</div>
-        <p><strong>Months 1–3:</strong> Build a minimal website with a "Request a Quote" CTA and launch Google Ads targeting "VR birthday party Toronto" and "VR rental Toronto." These are high-intent, low-competition keywords right now.</p>
+        <p><strong>Months 1–3:</strong> Build a minimal website with a "Request a Quote" CTA and launch Google Ads targeting "VR birthday party Toronto" and "VR rental Toronto." High-intent, low-competition keywords right now.</p>
       </div>
       <div class="step">
         <div class="step-num">3</div>
@@ -669,7 +826,7 @@
 
   <!-- Footer note -->
   <div class="footer-note">
-    <strong>Next Steps:</strong> Let us know which concept resonates most and we can develop a full digital marketing strategy — covering SEO, Google Ads, LinkedIn outreach, and a website brief — tailored specifically to the direction you choose. We're also happy to shortlist domain availability and run competitor research on any of the brand names above.
+    <strong>Next Steps:</strong> Let us know which concept and name resonates most and we can develop a full digital marketing strategy — covering SEO, Google Ads, LinkedIn outreach, and a website brief — tailored to the direction you choose. We're also happy to run domain availability checks and competitor research on any of the names above.
   </div>
 
 </div>
