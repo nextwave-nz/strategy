@@ -1,0 +1,873 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Another World VR — llms.txt + Meta Titles, Descriptions & H1 Tags | Next Wave</title>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&family=Barlow:wght@400;500;600;700&family=Barlow+Condensed:wght@600;700&display=swap" rel="stylesheet"/>
+<style>
+:root{--bg:#08080d;--surface:#111118;--surface2:#18181f;--border:#2a2a35;--border2:#1e1e28;--red:#e8001d;--red-glow:rgba(232,0,29,.12);--green:#22c55e;--orange:#f59e0b;--blue:#3b82f6;--white:#fff;--text:#e8e8ee;--light:#9999aa;--muted:#555566;--code-bg:#050508}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--text);font-family:'Barlow',sans-serif;line-height:1.65;font-size:15px;overflow-x:hidden}
+body::before{content:'';position:fixed;inset:0;pointer-events:none;z-index:0;background:radial-gradient(ellipse 60% 40% at 100% 0%,rgba(232,0,29,.05) 0%,transparent 55%)}
+nav{position:sticky;top:0;z-index:200;background:rgba(8,8,13,.97);backdrop-filter:blur(16px);border-bottom:1px solid var(--border);height:52px;display:flex;align-items:center;padding:0 2rem;gap:1.5rem}
+.nav-logo{font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:1rem;letter-spacing:.06em;text-transform:uppercase;white-space:nowrap;color:var(--white)}
+.nav-logo em{font-style:normal;color:var(--red)}
+.nav-links{display:flex;gap:0;overflow-x:auto;flex:1}
+.nav-links::-webkit-scrollbar{display:none}
+.nav-links a{font-size:.7rem;font-weight:500;color:var(--muted);text-decoration:none;padding:.32rem .8rem;border-radius:4px;white-space:nowrap;transition:color .2s,background .2s}
+.nav-links a:hover{color:var(--red);background:var(--red-glow)}
+.hero{position:relative;z-index:1;padding:3.5rem 3rem 2.5rem;border-bottom:2px solid var(--red)}
+.hero-tag{display:inline-flex;align-items:center;gap:.45rem;background:var(--red-glow);border:1px solid rgba(232,0,29,.3);color:var(--red);padding:.27rem .85rem;border-radius:3px;font-size:.68rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;margin-bottom:1.1rem}
+.hero h1{font-family:'Barlow Condensed',sans-serif;font-size:clamp(1.8rem,3.5vw,2.8rem);font-weight:600;line-height:1.1;letter-spacing:.01em;text-transform:uppercase;margin-bottom:.5rem;color:var(--white)}
+.hero h1 span{color:var(--red)}
+.hero-sub{font-size:.92rem;color:var(--light);max-width:680px;line-height:1.7}
+.wrap{max-width:1060px;margin:0 auto;padding:0 3rem 6rem;position:relative;z-index:1}
+.section{padding-top:3.5rem}
+.sec-header{display:flex;align-items:center;gap:.8rem;margin-bottom:1.5rem;padding-bottom:.85rem;border-bottom:1px solid var(--border2)}
+.sec-num{font-size:.62rem;font-weight:700;letter-spacing:.15em;text-transform:uppercase;color:var(--red);background:var(--red-glow);border:1px solid rgba(232,0,29,.2);padding:.18rem .55rem;border-radius:3px}
+.sec-title{font-family:'Barlow Condensed',sans-serif;font-size:1.3rem;font-weight:600;letter-spacing:.02em;text-transform:uppercase;color:var(--white)}
+
+/* CODE BLOCK */
+.code-block{border-radius:6px;overflow:hidden;margin-bottom:1.2rem;border:1px solid var(--border)}
+.code-header{display:flex;align-items:center;justify-content:space-between;background:var(--surface2);padding:.6rem 1.1rem;border-bottom:1px solid var(--border)}
+.code-meta{display:flex;align-items:center;gap:.6rem}
+.lang-tag{background:var(--red-glow);color:var(--red);border:1px solid rgba(232,0,29,.3);padding:.1rem .45rem;border-radius:3px;font-size:.65rem;font-weight:700;letter-spacing:.06em;font-family:'JetBrains Mono',monospace}
+.code-label{font-size:.75rem;font-weight:500;color:var(--light)}
+.copy-btn{font-size:.7rem;font-weight:600;color:var(--muted);background:rgba(255,255,255,.04);border:1px solid var(--border);padding:.23rem .7rem;border-radius:4px;cursor:pointer;transition:all .2s;font-family:'Barlow',sans-serif}
+.copy-btn:hover{color:var(--red);background:var(--red-glow);border-color:rgba(232,0,29,.3)}
+.copy-btn.ok{color:var(--green);border-color:rgba(34,197,94,.3)}
+.code-body{background:var(--code-bg);padding:1.2rem 1.35rem;overflow-x:auto}
+.code-body pre{margin:0;font-family:'JetBrains Mono',monospace;font-size:.77rem;line-height:1.78;color:#c0c0d0;white-space:pre}
+
+/* PAGE TABLE */
+.page-card{background:var(--surface);border:1px solid var(--border);border-radius:8px;overflow:hidden;margin-bottom:1rem}
+.page-card-head{background:var(--surface2);padding:.7rem 1.2rem;border-bottom:1px solid var(--border);display:flex;align-items:center;justify-content:space-between}
+.page-url{font-family:'JetBrains Mono',monospace;font-size:.78rem;color:var(--red)}
+.page-name{font-family:'Barlow Condensed',sans-serif;font-size:.95rem;font-weight:600;letter-spacing:.04em;text-transform:uppercase;color:var(--white)}
+.page-rows{padding:0}
+.page-row{display:grid;grid-template-columns:120px 1fr;border-bottom:1px solid var(--border2)}
+.page-row:last-child{border-bottom:none}
+.row-label{padding:.75rem 1rem;font-size:.68rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);background:rgba(255,255,255,.02);border-right:1px solid var(--border2);display:flex;align-items:flex-start;padding-top:.85rem}
+.row-content{padding:.75rem 1.2rem;position:relative}
+.row-val{font-size:.86rem;color:var(--text);line-height:1.6;font-weight:500;padding-right:3rem}
+.current{font-size:.78rem;color:var(--muted);text-decoration:line-through;margin-bottom:.35rem;font-style:italic}
+.chars{position:absolute;right:.8rem;top:.8rem;font-size:.65rem;color:var(--muted);font-family:'JetBrains Mono',monospace}
+.chars.ok{color:var(--green)}
+.chars.warn{color:var(--orange)}
+.copy-inline{position:absolute;right:.8rem;bottom:.6rem;font-size:.65rem;font-weight:600;color:var(--muted);background:rgba(255,255,255,.04);border:1px solid var(--border);padding:.15rem .5rem;border-radius:3px;cursor:pointer;font-family:'Barlow',sans-serif;transition:all .2s}
+.copy-inline:hover{color:var(--red);background:var(--red-glow)}
+.copy-inline.ok{color:var(--green)}
+.h1-tag{display:inline-block;background:rgba(232,0,29,.08);border:1px solid rgba(232,0,29,.2);color:var(--red);padding:.08rem .4rem;border-radius:3px;font-family:'JetBrains Mono',monospace;font-size:.72rem;margin-right:.4rem;vertical-align:middle}
+.notice{border-radius:6px;padding:.8rem 1rem;margin-bottom:1rem;font-size:.82rem;line-height:1.65;border-left:3px solid var(--orange);background:rgba(245,158,11,.06);border:1px solid rgba(245,158,11,.15);border-left:3px solid var(--orange);color:var(--light)}
+.notice strong{color:var(--orange)}
+
+.divider{border:none;border-top:1px solid var(--border2);margin:3rem 0 0}
+footer{border-top:1px solid var(--border);padding:1.3rem 3rem;display:flex;align-items:center;justify-content:space-between;font-size:.74rem;color:var(--muted);position:relative;z-index:1}
+@media(max-width:768px){.hero,.wrap,footer{padding-left:1.4rem;padding-right:1.4rem}.nav-links{display:none}.page-row{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-logo">Next<em>Wave</em></div>
+  <div class="nav-links">
+    <a href="#llms">llms.txt</a>
+    <a href="#homepage">Homepage</a>
+    <a href="#games">Games</a>
+    <a href="#birthday">Birthday</a>
+    <a href="#corporate">Corporate</a>
+    <a href="#faq">FAQ</a>
+    <a href="#about">About</a>
+    <a href="#contact">Contact</a>
+    <a href="#buy">Booking</a>
+    <a href="#games-pages">All Game Pages</a>
+  </div>
+</nav>
+
+<div class="hero">
+  <div class="hero-tag">📋 SEO Deliverable · April 2026</div>
+  <h1>Another World VR<br/><span>llms.txt + Meta & H1 Tags — All Pages</span></h1>
+  <p class="hero-sub">Updated llms.txt with real pricing and all 22 games. Recommended meta titles, meta descriptions, and H1 tags for every page on north-york.another-world.com.</p>
+</div>
+
+<div class="wrap">
+
+<!-- ══════════════════════════════════════
+     1. llms.txt
+════════════════════════════════════════ -->
+<div class="section" id="llms">
+  <div class="sec-header">
+    <span class="sec-num">01</span>
+    <span class="sec-title">Updated llms.txt — Upload to Site Root</span>
+  </div>
+  <div class="notice"><strong>How to update:</strong> Go to WordPress → Media or use your file manager to replace the existing file at <code>https://north-york.another-world.com/llms.txt</code>. Update the review count and "Last updated" date monthly.</div>
+  <div class="code-block">
+    <div class="code-header">
+      <div class="code-meta"><span class="lang-tag">TXT</span><span class="code-label">Upload as llms.txt to site root</span></div>
+      <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+    </div>
+    <div class="code-body"><pre># Another World VR — North York, Toronto
+
+Another World VR is Toronto's top-rated free-roam virtual reality arena, located 2 minutes
+from Yorkdale Mall in North York. With 22 immersive multiplayer VR games across multiple
+genres, we offer unforgettable experiences for birthday parties, corporate team building,
+date nights, families, and groups. Book in 60 seconds, pay on arrival. Ages 6+.
+
+## Basic Information
+- Website: https://north-york.another-world.com/
+- Industry: Entertainment / Virtual Reality Arcade
+- Founded: 2025
+- Phone: +1 (647) 542 7486
+- Email: north-york@another-world.com
+- Address: 89 Bentworth Ave, Unit #6, North York, ON M6A 1P6, Canada
+- Near: Yorkdale Shopping Centre — 2 mins from Yorkdale subway station, off Dufferin Street
+- Hours: Monday–Friday 12pm–11pm | Saturday–Sunday 10am–11pm
+- Reviews: 630+ five-star Google reviews, rated 5.0/5.0 (as of April 2026)
+- Groups: 2–10 players simultaneously. Private arena hire available.
+- Age Minimum: Ages 6+ for most games. Ages 12+ for horror and survival games.
+
+## Pricing — Special Group Party Packages
+All packages include: Unlimited VR Gaming, Exclusive Recreation Lounge, Complimentary
+cutlery/water/soft drink per guest, Dedicated Event Host, Bring your own food & cake
+or arrange catering, Complimentary Invitation Card. Prices + tax.
+
+- Package 1: 10 people — 2 hrs VR gaming, 30 min lounge — CAD 650
+- Package 2: 15 people — 2 hrs VR gaming, 1 hr lounge — CAD 950
+- Package 3: 20 people — 3 hrs VR gaming, 1 hr lounge — CAD 1,300
+- Package 4: 30 people — 3 hrs VR gaming, 2 hrs lounge — CAD 1,650
+
+Packages available for: Kids' Birthdays, Family Celebrations, Corporate Events,
+Friends Night Out, Team Building Activities.
+
+## Main Pages
+- [Homepage](https://north-york.another-world.com/): Free-roam VR arena in North York, Toronto
+- [Games](https://north-york.another-world.com/games): All 22 VR games available to book
+- [Birthday Party](https://north-york.another-world.com/birthday): VR birthday parties for kids and adults
+- [Corporate Events](https://north-york.another-world.com/corporate): VR team building and corporate event hire
+- [Book Now](https://north-york.another-world.com/buy): Online booking — choose game, date, time
+- [Pricing](https://north-york.another-world.com/rates): Full pricing for sessions and packages
+- [FAQ](https://north-york.another-world.com/faq): Pricing, ages, what to wear, parking, booking info
+- [About Us](https://north-york.another-world.com/about): Our story, team, and location information
+- [Contact](https://north-york.another-world.com/contact): Address, phone, email, hours, map
+- [Gift Cards](https://north-york.another-world.com/gift-cards): VR experience gift cards
+
+## VR Games Available (22 Games)
+- [Kernel: Bunker](https://north-york.another-world.com/games/kernel): Team shooter in abandoned bunker with physics anomalies. 4–10 players, ages 12+
+- [Kernel: Raven](https://north-york.another-world.com/games): Massive tactical map, realistic graphics, intense team combat. 4–10 players, ages 12+
+- [Kernel: Survival Protocol](https://north-york.another-world.com/games): Terrifying enemies, tense survival atmosphere. 4–10 players, ages 12+
+- [Kernel: Factory](https://north-york.another-world.com/games): Industrial ruins combat — complex verticality, limited visibility. 4–10 players, ages 12+
+- [Starbase: Expedition](https://north-york.another-world.com/games/colony_code_red): Space horror co-op on planet Alekta. 2–4 players, ages 12+
+- [Starbase: Survival](https://north-york.another-world.com/games/starbase-survival): Alien wave survival on a space platform. 2–4 players, ages 12+
+- [Shmooter: Skyscrapers](https://north-york.another-world.com/games/shmooter): Team shooter across city skyscrapers. 2–10 players, ages 6+
+- [Shmooter: Island Assault](https://north-york.another-world.com/games/island_assault): Defend island from invaders. 2–10 players, ages 6+
+- [Shmooter: Cubes](https://north-york.another-world.com/games/cubes): Blocky world multiplayer shooter. 2–10 players, ages 6+
+- [Shmooter: Space Battle](https://north-york.another-world.com/games/space_battle): Space station alien shooter. 2–10 players, ages 6+
+- [Shmooter: Space Battle 2](https://north-york.another-world.com/games): Sequel space conquest shooter. 2–10 players, ages 6+
+- [Shmooter: Forts](https://north-york.another-world.com/games): Capture base, destroy buildings, platform combat. 2–10 players, ages 6+
+- [Shmooter: Invasion](https://north-york.another-world.com/games): Wave-based alien invasion with titan boss finale. 2–10 players, ages 6+
+- [Shmooter: Lara](https://north-york.another-world.com/games): Action-adventure VR shooter. 2–10 players, ages 6+
+- [Ghost Tower: Ghost Mansion](https://north-york.another-world.com/games/ghost_mansion): Ghost-busting horror adventure. 2–10 players, ages 6+
+- [Ghost Tower: Dance](https://north-york.another-world.com/games/dance): VR dance party with ghost companions. 2–10 players, ages 6+
+- [Ghost Tower: Fishing](https://north-york.another-world.com/games/fishing): Kids fishing game with ghost companions. 2–10 players, ages 6+
+- [Safe Night](https://north-york.another-world.com/games/safe_night): Zombie survival until evacuation. 2–4 players, ages 12+
+- [Mysterious Tower: Miners](https://north-york.another-world.com/games): Abandoned mine tower with ghost miner challenges. 2–10 players, ages 6+
+- [Professional Tower: Tempo](https://north-york.another-world.com/games): High-skill competitive multiplayer. 2–10 players, ages 6+
+- [Tavern](https://north-york.another-world.com/games): Fantasy tavern management social VR. 2–10 players, ages 6+
+- [Vessel: Cosmos](https://north-york.another-world.com/games): Space exploration multiplayer adventure. 2–10 players, ages 6+
+
+## Social Media
+- [Facebook](https://www.facebook.com/anotherworldnorthyork/)
+- [Instagram](https://www.instagram.com/awvrnorthyork)
+- [TikTok](https://www.tiktok.com/@awvrnorthyork)
+- [WhatsApp](https://wa.me/message/EPLOXZA56YPVP1)
+
+## Sitemap
+- [XML Sitemap](https://north-york.another-world.com/sitemap.xml)
+
+Last updated: April 2026</pre></div>
+  </div>
+</div>
+
+<hr class="divider"/>
+
+<!-- ══════════════════════════════════════
+     2. META TITLES, DESCRIPTIONS & H1 TAGS
+════════════════════════════════════════ -->
+<div class="section" id="homepage">
+  <div class="sec-header">
+    <span class="sec-num">02</span>
+    <span class="sec-title">Meta Titles, Descriptions & H1 Tags — All Pages</span>
+  </div>
+
+  <!-- HOMEPAGE -->
+  <div class="page-card">
+    <div class="page-card-head">
+      <div class="page-url">north-york.another-world.com/</div>
+      <div class="page-name">Homepage</div>
+    </div>
+    <div class="page-rows">
+      <div class="page-row">
+        <div class="row-label">Meta Title</div>
+        <div class="row-content">
+          <div class="current">Virtual Reality Club in North York – a network of VR arenas and parks</div>
+          <div class="row-val">VR Arena North York Toronto | Book Free-Roam Virtual Reality</div>
+          <span class="chars ok">58 chars ✓</span>
+          <button class="copy-inline" onclick="copyInline(this,'VR Arena North York Toronto | Book Free-Roam Virtual Reality')">Copy</button>
+        </div>
+      </div>
+      <div class="page-row">
+        <div class="row-label">Meta Desc</div>
+        <div class="row-content">
+          <div class="row-val">Toronto's top-rated free-roam VR arena near Yorkdale Mall. 22 multiplayer games, private arenas for groups 2–10. Perfect for birthdays, corporate events & date night. Book in 60 seconds, pay on arrival.</div>
+          <span class="chars ok">196 chars ✓</span>
+          <button class="copy-inline" onclick="copyInline(this,`Toronto's top-rated free-roam VR arena near Yorkdale Mall. 22 multiplayer games, private arenas for groups 2–10. Perfect for birthdays, corporate events & date night. Book in 60 seconds, pay on arrival.`)">Copy</button>
+        </div>
+      </div>
+      <div class="page-row">
+        <div class="row-label">H1 Tag</div>
+        <div class="row-content">
+          <div class="current">Virtual Reality Club in North York</div>
+          <div class="row-val"><span class="h1-tag">H1</span> Toronto's #1 Free-Roam VR Arena — North York, Near Yorkdale Mall</div>
+          <button class="copy-inline" onclick="copyInline(this,`Toronto's #1 Free-Roam VR Arena — North York, Near Yorkdale Mall`)">Copy</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- GAMES -->
+  <div class="page-card" id="games">
+    <div class="page-card-head">
+      <div class="page-url">north-york.another-world.com/games</div>
+      <div class="page-name">Games Listing</div>
+    </div>
+    <div class="page-rows">
+      <div class="page-row">
+        <div class="row-label">Meta Title</div>
+        <div class="row-content">
+          <div class="row-val">VR Games North York | 22 Free-Roam Multiplayer | Another World Toronto</div>
+          <span class="chars ok">71 chars ✓</span>
+          <button class="copy-inline" onclick="copyInline(this,'VR Games North York | 22 Free-Roam Multiplayer | Another World Toronto')">Copy</button>
+        </div>
+      </div>
+      <div class="page-row">
+        <div class="row-label">Meta Desc</div>
+        <div class="row-content">
+          <div class="row-val">Choose from 22 free-roam VR games in North York — shooters, horror, sci-fi, adventure & kids games. Groups 2–10, ages 6+. No experience needed. Book in 60 seconds, pay on arrival.</div>
+          <span class="chars ok">179 chars ✓</span>
+          <button class="copy-inline" onclick="copyInline(this,'Choose from 22 free-roam VR games in North York — shooters, horror, sci-fi, adventure & kids games. Groups 2–10, ages 6+. No experience needed. Book in 60 seconds, pay on arrival.')">Copy</button>
+        </div>
+      </div>
+      <div class="page-row">
+        <div class="row-label">H1 Tag</div>
+        <div class="row-content">
+          <div class="row-val"><span class="h1-tag">H1</span> Free-Roam VR Games in North York, Toronto — 22 Immersive Experiences</div>
+          <button class="copy-inline" onclick="copyInline(this,'Free-Roam VR Games in North York, Toronto — 22 Immersive Experiences')">Copy</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- BIRTHDAY -->
+  <div class="page-card" id="birthday">
+    <div class="page-card-head">
+      <div class="page-url">north-york.another-world.com/birthday</div>
+      <div class="page-name">Birthday Party</div>
+    </div>
+    <div class="page-rows">
+      <div class="page-row">
+        <div class="row-label">Meta Title</div>
+        <div class="row-content">
+          <div class="current">Birthday – North York</div>
+          <div class="row-val">VR Birthday Party Toronto | Kids & Adults | Another World North York</div>
+          <span class="chars ok">68 chars ✓</span>
+          <button class="copy-inline" onclick="copyInline(this,'VR Birthday Party Toronto | Kids & Adults | Another World North York')">Copy</button>
+        </div>
+      </div>
+      <div class="page-row">
+        <div class="row-label">Meta Desc</div>
+        <div class="row-content">
+          <div class="row-val">Plan the ultimate VR birthday party in North York. Private arena, unlimited gaming, lounge with pizza & drinks. Packages from CAD 650 for 10 people. Ages 6+. Book your date now.</div>
+          <span class="chars ok">176 chars ✓</span>
+          <button class="copy-inline" onclick="copyInline(this,'Plan the ultimate VR birthday party in North York. Private arena, unlimited gaming, lounge with pizza & drinks. Packages from CAD 650 for 10 people. Ages 6+. Book your date now.')">Copy</button>
+        </div>
+      </div>
+      <div class="page-row">
+        <div class="row-label">H1 Tag</div>
+        <div class="row-content">
+          <div class="current">Birthday at Another World arena</div>
+          <div class="row-val"><span class="h1-tag">H1</span> VR Birthday Parties in North York — Kids, Teens & Adults Welcome</div>
+          <button class="copy-inline" onclick="copyInline(this,'VR Birthday Parties in North York — Kids, Teens & Adults Welcome')">Copy</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- CORPORATE -->
+  <div class="page-card" id="corporate">
+    <div class="page-card-head">
+      <div class="page-url">north-york.another-world.com/corporate</div>
+      <div class="page-name">Corporate Events</div>
+    </div>
+    <div class="page-rows">
+      <div class="page-row">
+        <div class="row-label">Meta Title</div>
+        <div class="row-content">
+          <div class="current">Корпоратив – North York ← CYRILLIC — URGENT FIX</div>
+          <div class="row-val">VR Team Building & Corporate Events Toronto | Another World North York</div>
+          <span class="chars ok">70 chars ✓</span>
+          <button class="copy-inline" onclick="copyInline(this,'VR Team Building & Corporate Events Toronto | Another World North York')">Copy</button>
+        </div>
+      </div>
+      <div class="page-row">
+        <div class="row-label">Meta Desc</div>
+        <div class="row-content">
+          <div class="row-val">Unforgettable VR corporate team building in North York. Private arenas, 22 multiplayer games, dedicated event host. Groups from 10 to 30. Packages from CAD 650. Near Yorkdale Mall.</div>
+          <span class="chars ok">180 chars ✓</span>
+          <button class="copy-inline" onclick="copyInline(this,'Unforgettable VR corporate team building in North York. Private arenas, 22 multiplayer games, dedicated event host. Groups from 10 to 30. Packages from CAD 650. Near Yorkdale Mall.')">Copy</button>
+        </div>
+      </div>
+      <div class="page-row">
+        <div class="row-label">H1 Tag</div>
+        <div class="row-content">
+          <div class="current">Corporate Event at Another World ← needs English fix</div>
+          <div class="row-val"><span class="h1-tag">H1</span> VR Team Building & Corporate Events in Toronto — Another World North York</div>
+          <button class="copy-inline" onclick="copyInline(this,'VR Team Building & Corporate Events in Toronto — Another World North York')">Copy</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- FAQ -->
+  <div class="page-card" id="faq">
+    <div class="page-card-head">
+      <div class="page-url">north-york.another-world.com/faq</div>
+      <div class="page-name">FAQ</div>
+    </div>
+    <div class="page-rows">
+      <div class="page-row">
+        <div class="row-label">Meta Title</div>
+        <div class="row-content">
+          <div class="current">FAQ – North York</div>
+          <div class="row-val">VR FAQs North York | Pricing, Ages & Booking | Another World Toronto</div>
+          <span class="chars ok">68 chars ✓</span>
+          <button class="copy-inline" onclick="copyInline(this,'VR FAQs North York | Pricing, Ages & Booking | Another World Toronto')">Copy</button>
+        </div>
+      </div>
+      <div class="page-row">
+        <div class="row-label">Meta Desc</div>
+        <div class="row-content">
+          <div class="row-val">All your questions about virtual reality in North York answered. Pricing, age limits, what to wear, group sizes, parking, birthday parties & more. Another World VR — 20+ questions.</div>
+          <span class="chars ok">179 chars ✓</span>
+          <button class="copy-inline" onclick="copyInline(this,'All your questions about virtual reality in North York answered. Pricing, age limits, what to wear, group sizes, parking, birthday parties & more. Another World VR — 20+ questions.')">Copy</button>
+        </div>
+      </div>
+      <div class="page-row">
+        <div class="row-label">H1 Tag</div>
+        <div class="row-content">
+          <div class="current">FAQ: Another World VR in North York</div>
+          <div class="row-val"><span class="h1-tag">H1</span> Frequently Asked Questions — Another World VR, North York Toronto</div>
+          <button class="copy-inline" onclick="copyInline(this,'Frequently Asked Questions — Another World VR, North York Toronto')">Copy</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ABOUT -->
+  <div class="page-card" id="about">
+    <div class="page-card-head">
+      <div class="page-url">north-york.another-world.com/about</div>
+      <div class="page-name">About Us</div>
+    </div>
+    <div class="page-rows">
+      <div class="page-row">
+        <div class="row-label">Meta Title</div>
+        <div class="row-content">
+          <div class="current">About Another World – Virtual Reality North York</div>
+          <div class="row-val">About Another World VR | Toronto's Top-Rated VR Arena Near Yorkdale</div>
+          <span class="chars ok">67 chars ✓</span>
+          <button class="copy-inline" onclick="copyInline(this,'About Another World VR | Toronto\'s Top-Rated VR Arena Near Yorkdale')">Copy</button>
+        </div>
+      </div>
+      <div class="page-row">
+        <div class="row-label">Meta Desc</div>
+        <div class="row-content">
+          <div class="row-val">Learn about Another World VR — Toronto's top-rated free-roam virtual reality arena with 630+ five-star reviews. 22 games, expert hosts, 2 mins from Yorkdale Mall on Bentworth Ave, North York.</div>
+          <span class="chars ok">190 chars ✓</span>
+          <button class="copy-inline" onclick="copyInline(this,`Learn about Another World VR — Toronto's top-rated free-roam virtual reality arena with 630+ five-star reviews. 22 games, expert hosts, 2 mins from Yorkdale Mall on Bentworth Ave, North York.`)">Copy</button>
+        </div>
+      </div>
+      <div class="page-row">
+        <div class="row-label">H1 Tag</div>
+        <div class="row-content">
+          <div class="current">About Another World – Virtual Reality North York</div>
+          <div class="row-val"><span class="h1-tag">H1</span> About Another World VR — Toronto's Top-Rated Free-Roam VR Arena</div>
+          <button class="copy-inline" onclick="copyInline(this,`About Another World VR — Toronto's Top-Rated Free-Roam VR Arena`)">Copy</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- CONTACT -->
+  <div class="page-card" id="contact">
+    <div class="page-card-head">
+      <div class="page-url">north-york.another-world.com/contact</div>
+      <div class="page-name">Contact / Contacts</div>
+    </div>
+    <div class="page-rows">
+      <div class="page-row">
+        <div class="row-label">Meta Title</div>
+        <div class="row-content">
+          <div class="row-val">Contact Another World VR North York | Address, Hours & Phone</div>
+          <span class="chars ok">60 chars ✓</span>
+          <button class="copy-inline" onclick="copyInline(this,'Contact Another World VR North York | Address, Hours & Phone')">Copy</button>
+        </div>
+      </div>
+      <div class="page-row">
+        <div class="row-label">Meta Desc</div>
+        <div class="row-content">
+          <div class="row-val">Find Another World VR in North York — 89 Bentworth Ave, Unit #6, near Yorkdale Mall. Open Mon–Fri 12pm–11pm, Sat–Sun 10am–11pm. Call +1 (647) 542 7486 or book online.</div>
+          <span class="chars ok">168 chars ✓</span>
+          <button class="copy-inline" onclick="copyInline(this,'Find Another World VR in North York — 89 Bentworth Ave, Unit #6, near Yorkdale Mall. Open Mon–Fri 12pm–11pm, Sat–Sun 10am–11pm. Call +1 (647) 542 7486 or book online.')">Copy</button>
+        </div>
+      </div>
+      <div class="page-row">
+        <div class="row-label">H1 Tag</div>
+        <div class="row-content">
+          <div class="row-val"><span class="h1-tag">H1</span> Contact Another World VR — North York, Toronto</div>
+          <button class="copy-inline" onclick="copyInline(this,'Contact Another World VR — North York, Toronto')">Copy</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- BOOKING -->
+  <div class="page-card" id="buy">
+    <div class="page-card-head">
+      <div class="page-url">north-york.another-world.com/buy</div>
+      <div class="page-name">Book a VR Game</div>
+    </div>
+    <div class="page-rows">
+      <div class="page-row">
+        <div class="row-label">Meta Title</div>
+        <div class="row-content">
+          <div class="row-val">Book a VR Game North York | Another World — Pay on Arrival</div>
+          <span class="chars ok">59 chars ✓</span>
+          <button class="copy-inline" onclick="copyInline(this,'Book a VR Game North York | Another World — Pay on Arrival')">Copy</button>
+        </div>
+      </div>
+      <div class="page-row">
+        <div class="row-label">Meta Desc</div>
+        <div class="row-content">
+          <div class="row-val">Book your VR game at Another World North York in 60 seconds. Choose from 22 free-roam games, select your date and time. Pay on arrival — no upfront payment needed. Groups 2–10.</div>
+          <span class="chars ok">176 chars ✓</span>
+          <button class="copy-inline" onclick="copyInline(this,'Book your VR game at Another World North York in 60 seconds. Choose from 22 free-roam games, select your date and time. Pay on arrival — no upfront payment needed. Groups 2–10.')">Copy</button>
+        </div>
+      </div>
+      <div class="page-row">
+        <div class="row-label">H1 Tag</div>
+        <div class="row-content">
+          <div class="row-val"><span class="h1-tag">H1</span> Book a VR Game at Another World — North York, Toronto</div>
+          <button class="copy-inline" onclick="copyInline(this,'Book a VR Game at Another World — North York, Toronto')">Copy</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- INDIVIDUAL GAME PAGES -->
+  <div id="games-pages" style="margin-top:2rem">
+    <h3 style="font-family:'Barlow Condensed',sans-serif;font-size:1.1rem;font-weight:600;letter-spacing:.04em;text-transform:uppercase;color:var(--white);margin-bottom:1rem">Individual Game Pages — Meta Titles & H1 Tags</h3>
+
+    <!-- KERNEL BUNKER -->
+    <div class="page-card">
+      <div class="page-card-head">
+        <div class="page-url">north-york.another-world.com/games/kernel</div>
+        <div class="page-name">Kernel: Bunker</div>
+      </div>
+      <div class="page-rows">
+        <div class="page-row">
+          <div class="row-label">Meta Title</div>
+          <div class="row-content">
+            <div class="current">Кернел: Бункер – North York ← CYRILLIC FIX URGENT</div>
+            <div class="row-val">Kernel: Bunker VR Team Shooter | Another World North York, Toronto</div>
+            <span class="chars ok">65 chars ✓</span>
+            <button class="copy-inline" onclick="copyInline(this,'Kernel: Bunker VR Team Shooter | Another World North York, Toronto')">Copy</button>
+          </div>
+        </div>
+        <div class="page-row">
+          <div class="row-label">Meta Desc</div>
+          <div class="row-content">
+            <div class="row-val">Battle in an abandoned bunker where a mysterious black sun changes the laws of physics. Team vs team VR shooter for 4–10 players, ages 12+. 60-min sessions. Book at Another World VR, North York.</div>
+            <span class="chars ok">197 chars ✓</span>
+            <button class="copy-inline" onclick="copyInline(this,'Battle in an abandoned bunker where a mysterious black sun changes the laws of physics. Team vs team VR shooter for 4–10 players, ages 12+. 60-min sessions. Book at Another World VR, North York.')">Copy</button>
+          </div>
+        </div>
+        <div class="page-row">
+          <div class="row-label">H1 Tag</div>
+          <div class="row-content">
+            <div class="row-val"><span class="h1-tag">H1</span> Kernel: Bunker — Free-Roam VR Team Shooter in North York, Toronto</div>
+            <button class="copy-inline" onclick="copyInline(this,'Kernel: Bunker — Free-Roam VR Team Shooter in North York, Toronto')">Copy</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- STARBASE EXPEDITION -->
+    <div class="page-card">
+      <div class="page-card-head">
+        <div class="page-url">north-york.another-world.com/games/colony_code_red</div>
+        <div class="page-name">Starbase: Expedition</div>
+      </div>
+      <div class="page-rows">
+        <div class="page-row">
+          <div class="row-label">Meta Title</div>
+          <div class="row-content">
+            <div class="row-val">Starbase: Expedition VR Sci-Fi Horror | Another World North York</div>
+            <span class="chars ok">64 chars ✓</span>
+            <button class="copy-inline" onclick="copyInline(this,'Starbase: Expedition VR Sci-Fi Horror | Another World North York')">Copy</button>
+          </div>
+        </div>
+        <div class="page-row">
+          <div class="row-label">Meta Desc</div>
+          <div class="row-content">
+            <div class="row-val">Face the nightmare inside a deep space station on planet Alekta. Co-op VR horror survival for 2–4 players, ages 12+. 60-min sessions at Another World VR, North York, Toronto.</div>
+            <span class="chars ok">173 chars ✓</span>
+            <button class="copy-inline" onclick="copyInline(this,'Face the nightmare inside a deep space station on planet Alekta. Co-op VR horror survival for 2–4 players, ages 12+. 60-min sessions at Another World VR, North York, Toronto.')">Copy</button>
+          </div>
+        </div>
+        <div class="page-row">
+          <div class="row-label">H1 Tag</div>
+          <div class="row-content">
+            <div class="row-val"><span class="h1-tag">H1</span> Starbase: Expedition — Free-Roam VR Sci-Fi Horror in North York</div>
+            <button class="copy-inline" onclick="copyInline(this,'Starbase: Expedition — Free-Roam VR Sci-Fi Horror in North York')">Copy</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- STARBASE SURVIVAL -->
+    <div class="page-card">
+      <div class="page-card-head">
+        <div class="page-url">north-york.another-world.com/games/starbase-survival</div>
+        <div class="page-name">Starbase: Survival</div>
+      </div>
+      <div class="page-rows">
+        <div class="page-row">
+          <div class="row-label">Meta Title</div>
+          <div class="row-content">
+            <div class="row-val">Starbase: Survival VR Co-op Alien Survival | Another World North York</div>
+            <span class="chars ok">69 chars ✓</span>
+            <button class="copy-inline" onclick="copyInline(this,'Starbase: Survival VR Co-op Alien Survival | Another World North York')">Copy</button>
+          </div>
+        </div>
+        <div class="page-row">
+          <div class="row-label">Meta Desc</div>
+          <div class="row-content">
+            <div class="row-val">Survive waves of alien life forms on a space platform — no chance of evacuation. Intense co-op VR survival for 2–4 players, ages 12+. Book at Another World VR, North York, Toronto.</div>
+            <span class="chars ok">180 chars ✓</span>
+            <button class="copy-inline" onclick="copyInline(this,'Survive waves of alien life forms on a space platform — no chance of evacuation. Intense co-op VR survival for 2–4 players, ages 12+. Book at Another World VR, North York, Toronto.')">Copy</button>
+          </div>
+        </div>
+        <div class="page-row">
+          <div class="row-label">H1 Tag</div>
+          <div class="row-content">
+            <div class="row-val"><span class="h1-tag">H1</span> Starbase: Survival — Free-Roam VR Alien Survival in North York</div>
+            <button class="copy-inline" onclick="copyInline(this,'Starbase: Survival — Free-Roam VR Alien Survival in North York')">Copy</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- SHMOOTER SKYSCRAPERS -->
+    <div class="page-card">
+      <div class="page-card-head">
+        <div class="page-url">north-york.another-world.com/games/shmooter</div>
+        <div class="page-name">Shmooter: Skyscrapers</div>
+      </div>
+      <div class="page-rows">
+        <div class="page-row">
+          <div class="row-label">Meta Title</div>
+          <div class="row-content">
+            <div class="current">Шмутер: Небоскребы – North York ← CYRILLIC FIX</div>
+            <div class="row-val">Shmooter: Skyscrapers VR Multiplayer Shooter | Another World North York</div>
+            <span class="chars ok">70 chars ✓</span>
+            <button class="copy-inline" onclick="copyInline(this,'Shmooter: Skyscrapers VR Multiplayer Shooter | Another World North York')">Copy</button>
+          </div>
+        </div>
+        <div class="page-row">
+          <div class="row-label">Meta Desc</div>
+          <div class="row-content">
+            <div class="row-val">Team multiplayer VR shooter across city skyscrapers. Collect bonuses and outwit rivals in fast-paced combat. 2–10 players, ages 6+. Book at Another World VR, North York, Toronto.</div>
+            <span class="chars ok">178 chars ✓</span>
+            <button class="copy-inline" onclick="copyInline(this,'Team multiplayer VR shooter across city skyscrapers. Collect bonuses and outwit rivals in fast-paced combat. 2–10 players, ages 6+. Book at Another World VR, North York, Toronto.')">Copy</button>
+          </div>
+        </div>
+        <div class="page-row">
+          <div class="row-label">H1 Tag</div>
+          <div class="row-content">
+            <div class="row-val"><span class="h1-tag">H1</span> Shmooter: Skyscrapers — Free-Roam VR Multiplayer Shooter in North York</div>
+            <button class="copy-inline" onclick="copyInline(this,'Shmooter: Skyscrapers — Free-Roam VR Multiplayer Shooter in North York')">Copy</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- SHMOOTER ISLAND ASSAULT -->
+    <div class="page-card">
+      <div class="page-card-head">
+        <div class="page-url">north-york.another-world.com/games/island_assault</div>
+        <div class="page-name">Shmooter: Island Assault</div>
+      </div>
+      <div class="page-rows">
+        <div class="page-row">
+          <div class="row-label">Meta Title</div>
+          <div class="row-content">
+            <div class="row-val">Shmooter: Island Assault VR Tactical Shooter | Another World North York</div>
+            <span class="chars ok">71 chars ✓</span>
+            <button class="copy-inline" onclick="copyInline(this,'Shmooter: Island Assault VR Tactical Shooter | Another World North York')">Copy</button>
+          </div>
+        </div>
+        <div class="page-row">
+          <div class="row-label">Meta Desc</div>
+          <div class="row-content">
+            <div class="row-val">Defend the island from invaders using weapons hidden across the map. Tactical free-roam VR shooter. 2–10 players, ages 6+. Book at Another World VR, North York, Toronto.</div>
+            <span class="chars ok">170 chars ✓</span>
+            <button class="copy-inline" onclick="copyInline(this,'Defend the island from invaders using weapons hidden across the map. Tactical free-roam VR shooter. 2–10 players, ages 6+. Book at Another World VR, North York, Toronto.')">Copy</button>
+          </div>
+        </div>
+        <div class="page-row">
+          <div class="row-label">H1 Tag</div>
+          <div class="row-content">
+            <div class="row-val"><span class="h1-tag">H1</span> Shmooter: Island Assault — Free-Roam VR Tactical Shooter in North York</div>
+            <button class="copy-inline" onclick="copyInline(this,'Shmooter: Island Assault — Free-Roam VR Tactical Shooter in North York')">Copy</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- SHMOOTER CUBES -->
+    <div class="page-card">
+      <div class="page-card-head">
+        <div class="page-url">north-york.another-world.com/games/cubes</div>
+        <div class="page-name">Shmooter: Cubes</div>
+      </div>
+      <div class="page-rows">
+        <div class="page-row">
+          <div class="row-label">Meta Title</div>
+          <div class="row-content">
+            <div class="row-val">Shmooter: Cubes VR Family Shooter | Another World North York, Toronto</div>
+            <span class="chars ok">69 chars ✓</span>
+            <button class="copy-inline" onclick="copyInline(this,'Shmooter: Cubes VR Family Shooter | Another World North York, Toronto')">Copy</button>
+          </div>
+        </div>
+        <div class="page-row">
+          <div class="row-label">Meta Desc</div>
+          <div class="row-content">
+            <div class="row-val">Multiplayer VR shooter in a vibrant blocky world — mountains, forests and open combat. Fun for all ages. 2–10 players, ages 6+. Book at Another World VR, North York, Toronto.</div>
+            <span class="chars ok">173 chars ✓</span>
+            <button class="copy-inline" onclick="copyInline(this,'Multiplayer VR shooter in a vibrant blocky world — mountains, forests and open combat. Fun for all ages. 2–10 players, ages 6+. Book at Another World VR, North York, Toronto.')">Copy</button>
+          </div>
+        </div>
+        <div class="page-row">
+          <div class="row-label">H1 Tag</div>
+          <div class="row-content">
+            <div class="row-val"><span class="h1-tag">H1</span> Shmooter: Cubes — Free-Roam VR Family Shooter in North York</div>
+            <button class="copy-inline" onclick="copyInline(this,'Shmooter: Cubes — Free-Roam VR Family Shooter in North York')">Copy</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- SHMOOTER SPACE BATTLE -->
+    <div class="page-card">
+      <div class="page-card-head">
+        <div class="page-url">north-york.another-world.com/games/space_battle</div>
+        <div class="page-name">Shmooter: Space Battle</div>
+      </div>
+      <div class="page-rows">
+        <div class="page-row">
+          <div class="row-label">Meta Title</div>
+          <div class="row-content">
+            <div class="row-val">Shmooter: Space Battle VR Sci-Fi Shooter | Another World North York</div>
+            <span class="chars ok">66 chars ✓</span>
+            <button class="copy-inline" onclick="copyInline(this,'Shmooter: Space Battle VR Sci-Fi Shooter | Another World North York')">Copy</button>
+          </div>
+        </div>
+        <div class="page-row">
+          <div class="row-label">Meta Desc</div>
+          <div class="row-content">
+            <div class="row-val">Fight alien invaders on a space station using teleporters and advanced weapons. Team vs team or free-for-all. 2–10 players, ages 6+. Book at Another World VR, North York, Toronto.</div>
+            <span class="chars ok">180 chars ✓</span>
+            <button class="copy-inline" onclick="copyInline(this,'Fight alien invaders on a space station using teleporters and advanced weapons. Team vs team or free-for-all. 2–10 players, ages 6+. Book at Another World VR, North York, Toronto.')">Copy</button>
+          </div>
+        </div>
+        <div class="page-row">
+          <div class="row-label">H1 Tag</div>
+          <div class="row-content">
+            <div class="row-val"><span class="h1-tag">H1</span> Shmooter: Space Battle — Free-Roam VR Sci-Fi Shooter in North York</div>
+            <button class="copy-inline" onclick="copyInline(this,'Shmooter: Space Battle — Free-Roam VR Sci-Fi Shooter in North York')">Copy</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- GHOST MANSION -->
+    <div class="page-card">
+      <div class="page-card-head">
+        <div class="page-url">north-york.another-world.com/games/ghost_mansion</div>
+        <div class="page-name">Ghost Tower: Ghost Mansion</div>
+      </div>
+      <div class="page-rows">
+        <div class="page-row">
+          <div class="row-label">Meta Title</div>
+          <div class="row-content">
+            <div class="row-val">Ghost Mansion VR Horror Adventure | Another World North York, Toronto</div>
+            <span class="chars ok">69 chars ✓</span>
+            <button class="copy-inline" onclick="copyInline(this,'Ghost Mansion VR Horror Adventure | Another World North York, Toronto')">Copy</button>
+          </div>
+        </div>
+        <div class="page-row">
+          <div class="row-label">Meta Desc</div>
+          <div class="row-content">
+            <div class="row-val">Ghost-busting VR horror — clear an abandoned mansion of supernatural creatures with your team. 2–10 players, ages 6+. 60-min sessions at Another World VR, North York, Toronto.</div>
+            <span class="chars ok">175 chars ✓</span>
+            <button class="copy-inline" onclick="copyInline(this,'Ghost-busting VR horror — clear an abandoned mansion of supernatural creatures with your team. 2–10 players, ages 6+. 60-min sessions at Another World VR, North York, Toronto.')">Copy</button>
+          </div>
+        </div>
+        <div class="page-row">
+          <div class="row-label">H1 Tag</div>
+          <div class="row-content">
+            <div class="row-val"><span class="h1-tag">H1</span> Ghost Tower: Ghost Mansion — Free-Roam VR Horror in North York</div>
+            <button class="copy-inline" onclick="copyInline(this,'Ghost Tower: Ghost Mansion — Free-Roam VR Horror in North York')">Copy</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- GHOST DANCE -->
+    <div class="page-card">
+      <div class="page-card-head">
+        <div class="page-url">north-york.another-world.com/games/dance</div>
+        <div class="page-name">Ghost Tower: Dance</div>
+      </div>
+      <div class="page-rows">
+        <div class="page-row">
+          <div class="row-label">Meta Title</div>
+          <div class="row-content">
+            <div class="row-val">Ghost Tower: Dance VR Party Game | Another World North York, Toronto</div>
+            <span class="chars ok">67 chars ✓</span>
+            <button class="copy-inline" onclick="copyInline(this,'Ghost Tower: Dance VR Party Game | Another World North York, Toronto')">Copy</button>
+          </div>
+        </div>
+        <div class="page-row">
+          <div class="row-label">Meta Desc</div>
+          <div class="row-content">
+            <div class="row-val">VR dance battle in a ghost-filled mansion — choose your music, copy the moves, and compete for the top score. 2–10 players, ages 6+. Book at Another World VR, North York, Toronto.</div>
+            <span class="chars ok">181 chars ✓</span>
+            <button class="copy-inline" onclick="copyInline(this,'VR dance battle in a ghost-filled mansion — choose your music, copy the moves, and compete for the top score. 2–10 players, ages 6+. Book at Another World VR, North York, Toronto.')">Copy</button>
+          </div>
+        </div>
+        <div class="page-row">
+          <div class="row-label">H1 Tag</div>
+          <div class="row-content">
+            <div class="row-val"><span class="h1-tag">H1</span> Ghost Tower: Dance — Free-Roam VR Dance Party in North York</div>
+            <button class="copy-inline" onclick="copyInline(this,'Ghost Tower: Dance — Free-Roam VR Dance Party in North York')">Copy</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- GHOST FISHING -->
+    <div class="page-card">
+      <div class="page-card-head">
+        <div class="page-url">north-york.another-world.com/games/fishing</div>
+        <div class="page-name">Ghost Tower: Fishing</div>
+      </div>
+      <div class="page-rows">
+        <div class="page-row">
+          <div class="row-label">Meta Title</div>
+          <div class="row-content">
+            <div class="row-val">Ghost Tower: Fishing VR Kids Game | Another World North York, Toronto</div>
+            <span class="chars ok">69 chars ✓</span>
+            <button class="copy-inline" onclick="copyInline(this,'Ghost Tower: Fishing VR Kids Game | Another World North York, Toronto')">Copy</button>
+          </div>
+        </div>
+        <div class="page-row">
+          <div class="row-label">Meta Desc</div>
+          <div class="row-content">
+            <div class="row-val">Fun VR fishing game for kids — catch colourful fish and compete with ghost companions cheering you on. Perfect for ages 6+. 2–10 players. Book at Another World VR, North York, Toronto.</div>
+            <span class="chars ok">184 chars ✓</span>
+            <button class="copy-inline" onclick="copyInline(this,'Fun VR fishing game for kids — catch colourful fish and compete with ghost companions cheering you on. Perfect for ages 6+. 2–10 players. Book at Another World VR, North York, Toronto.')">Copy</button>
+          </div>
+        </div>
+        <div class="page-row">
+          <div class="row-label">H1 Tag</div>
+          <div class="row-content">
+            <div class="row-val"><span class="h1-tag">H1</span> Ghost Tower: Fishing — VR Kids Fishing Game in North York</div>
+            <button class="copy-inline" onclick="copyInline(this,'Ghost Tower: Fishing — VR Kids Fishing Game in North York')">Copy</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- SAFE NIGHT -->
+    <div class="page-card">
+      <div class="page-card-head">
+        <div class="page-url">north-york.another-world.com/games/safe_night</div>
+        <div class="page-name">Safe Night</div>
+      </div>
+      <div class="page-rows">
+        <div class="page-row">
+          <div class="row-label">Meta Title</div>
+          <div class="row-content">
+            <div class="row-val">Safe Night VR Zombie Survival Game | Another World North York, Toronto</div>
+            <span class="chars ok">70 chars ✓</span>
+            <button class="copy-inline" onclick="copyInline(this,'Safe Night VR Zombie Survival Game | Another World North York, Toronto')">Copy</button>
+          </div>
+        </div>
+        <div class="page-row">
+          <div class="row-label">Meta Desc</div>
+          <div class="row-content">
+            <div class="row-val">Survive the night as mutated zombies close in — hold out until evacuation as a team. Intense co-op VR survival. 2–4 players, ages 12+. Book at Another World VR, North York, Toronto.</div>
+            <span class="chars ok">181 chars ✓</span>
+            <button class="copy-inline" onclick="copyInline(this,'Survive the night as mutated zombies close in — hold out until evacuation as a team. Intense co-op VR survival. 2–4 players, ages 12+. Book at Another World VR, North York, Toronto.')">Copy</button>
+          </div>
+        </div>
+        <div class="page-row">
+          <div class="row-label">H1 Tag</div>
+          <div class="row-content">
+            <div class="row-val"><span class="h1-tag">H1</span> Safe Night — Free-Roam VR Zombie Survival in North York</div>
+            <button class="copy-inline" onclick="copyInline(this,'Safe Night — Free-Roam VR Zombie Survival in North York')">Copy</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div><!-- end game pages -->
+</div>
+
+</div><!-- end wrap -->
+
+<footer>
+  <span>© 2026 Next Wave · AI-Powered Digital Marketing · New Zealand</span>
+  <span>Another World VR — llms.txt + Meta & H1 Tags · April 2026</span>
+</footer>
+
+<script>
+function copyCode(btn) {
+  const pre = btn.closest('.code-block').querySelector('pre');
+  navigator.clipboard.writeText(pre.innerText || pre.textContent).then(() => {
+    btn.textContent = '✓ Copied!'; btn.classList.add('ok');
+    setTimeout(() => { btn.textContent = 'Copy'; btn.classList.remove('ok'); }, 2200);
+  });
+}
+function copyInline(btn, text) {
+  navigator.clipboard.writeText(text).then(() => {
+    btn.textContent = '✓'; btn.classList.add('ok');
+    setTimeout(() => { btn.textContent = 'Copy'; btn.classList.remove('ok'); }, 2000);
+  });
+}
+</script>
+</body>
+</html>
